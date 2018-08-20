@@ -1,0 +1,314 @@
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Montserrat Alternates';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat Alternates Bold'), local('MontserratAlternates-Bold'), url(https://fonts.gstatic.com/s/montserratalternates/v9/mFTiWacfw6zH4dthXcyms1lPpC8I_b0juU0xUILFCrxG6mA.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Montserrat Alternates';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat Alternates Bold'), local('MontserratAlternates-Bold'), url(https://fonts.gstatic.com/s/montserratalternates/v9/mFTiWacfw6zH4dthXcyms1lPpC8I_b0juU0xUILFA7xG6mA.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Montserrat Alternates';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat Alternates Bold'), local('MontserratAlternates-Bold'), url(https://fonts.gstatic.com/s/montserratalternates/v9/mFTiWacfw6zH4dthXcyms1lPpC8I_b0juU0xUILFCLxG6mA.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Montserrat Alternates';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat Alternates Bold'), local('MontserratAlternates-Bold'), url(https://fonts.gstatic.com/s/montserratalternates/v9/mFTiWacfw6zH4dthXcyms1lPpC8I_b0juU0xUILFCbxG6mA.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Montserrat Alternates';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat Alternates Bold'), local('MontserratAlternates-Bold'), url(https://fonts.gstatic.com/s/montserratalternates/v9/mFTiWacfw6zH4dthXcyms1lPpC8I_b0juU0xUILFB7xG.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, .DecoLetter, nav, section, summary {
+    display:block;
+}
+/* Color schemes */
+ .DecoLetter {
+    color: white;
+    --color-text: #fff;
+    --color-bg: #101010;
+    --color-link: #fff;
+    --color-link-hover: #fff473;
+    --color-nav: #fff;
+    /*
+    background-color: #000;
+    --color-bg-slide-1: #201155;
+    --color-bg-slide-2: #4cabef;
+    --color-bg-slide-3: #272526;
+    --color-bg-slide-4: #b9b9b9;
+    --color-bg-slide-5: #5900ce;
+    --color-bg-slide-6: #1b1a1a;
+    --color-bg-slide-7: #bf2525;
+    --color-bg-slide-8: #d6d1d1;
+    --color-bg-slide-9: #000000;
+    */
+}
+.hidden {
+    position: absolute;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+/* Icons */
+.icon {
+    display: block;
+    width: 1.5em;
+    height: 1.5em;
+    margin: 0 auto;
+    fill: currentColor;
+}
+.DecoLetter {
+    position: relative;
+    width: 100%;
+    height: 420px;
+}
+.DecoLetter .content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    min-height: 420px;
+}
+.DecoLetter .content--fixed {
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    display: grid;
+    align-content: space-between;
+    width: 100%;
+    max-width: none;
+    min-height: 0;
+    height: 100vh;
+    padding: 1.5em;
+    pointer-events: none;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto 4em;
+    grid-template-areas:'header header''... ...''github demos';
+}
+.DecoLetter .content--fixed a {
+    pointer-events: auto;
+}
+/* Header */
+ .codrops-header {
+    position: relative;
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    align-items: center;
+    align-self: start;
+    grid-area: header;
+    justify-self: start;
+}
+.codrops-header__title {
+    font-size: 1.15em;
+    font-weight: normal;
+    margin: 0 0 0 1em;
+    padding: 0.75em 0;
+}
+.github {
+    display: block;
+    align-self: end;
+    grid-area: github;
+    justify-self: start;
+}
+/* Top Navigation Style */
+ .codrops-links {
+    position: relative;
+    display: flex;
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+}
+.codrops-icon {
+    display: inline-block;
+    margin: 0.15em;
+    padding: 0.25em;
+}
+/* Slideshow */
+ .DecoLetter .slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.DecoLetter .slide {
+    position: absolute;
+    width: 100%;
+    height: 420px;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 1;
+}
+.DecoLetter .slide--current {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 0;
+}
+.DecoLetter .slide__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.DecoLetter .slide__bg--1 {
+    background: var(--color-bg-slide-1);
+}
+.DecoLetter .slide__bg--2 {
+    background: var(--color-bg-slide-2);
+}
+.DecoLetter .slide__bg--3 {
+    background: var(--color-bg-slide-3);
+}
+.DecoLetter .slide__bg--4 {
+    background: var(--color-bg-slide-4);
+}
+.DecoLetter .slide__bg--5 {
+    background: var(--color-bg-slide-5);
+}
+.DecoLetter .slide__bg--6 {
+    background: var(--color-bg-slide-6);
+}
+.DecoLetter .slide__bg--7 {
+    background: var(--color-bg-slide-7);
+}
+.DecoLetter .slide__bg--8 {
+    background: var(--color-bg-slide-8);
+}
+.DecoLetter .slidenav {
+    position: absolute;
+    bottom: 0;
+    z-index: 200;
+}
+.DecoLetter .slidenav__item {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: var(--color-text);
+    margin: 1em;
+}
+.DecoLetter .slidenav__item:focus {
+    outline: none;
+}
+.DecoLetter .slidenav__item:hover {
+    opacity: 0.6;
+}
+.DecoLetter .slidenav__item--next .icon {
+    transform: rotate(180deg);
+}
+/* Word + SVG styles */
+ .word {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 0 0.25em 0;
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    grid-area: title;
+    font-size: 6vw;
+    font-weight: 400;
+}
+.word span {
+    display: block;
+    position: relative;
+    flex: none;
+    white-space: pre;
+}
+.word--1 {
+    font-family:'Josefin Sans', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 6vw;
+    color: #ff0085;
+}
+.word--2 {
+    font-family:'Arbutus Slab', sans-serif;
+}
+.word--3 {
+    font-family:'Questrial', sans-serif;
+}
+.word--4 {
+    font-family:'Poppins', sans-serif;
+    font-weight: 800;
+}
+.word--5 {
+    font-family:'Bungee Outline', sans-serif;
+}
+.word--6 {
+    font-family:'Hammersmith One', sans-serif;
+}
+.word--6 .char5, .word--6 .char9 {
+    color: #dc2e2e;
+}
+.word--7 {
+    font-family:'Volkhov', serif;
+    font-weight: 700;
+}
+.word--8 {
+    font-family:'Josefin Sans', sans-serif;
+    font-weight: 700;
+    text-transform: lowercase;
+    letter-spacing: -0.05em;
+    color: #0800ff;
+}
+.word--9 {
+    font-family:'Montserrat Alternates', serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 8vw;
+}
+.shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+@media screen and (max-width: 40em) {
+    .DecoLetter .slide .word {
+        font-size: 2em;
+    }
+}
+@media screen and (max-width: 991px) {
+    .DecoLetter, .DecoLetter .slide, .shapes {
+        height: 222px;
+    }
+    .DecoLetter .slidenav {
+        top: 150px;
+    }
+}

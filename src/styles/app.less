@@ -1,0 +1,163 @@
+@baseFontSize: 75;
+.px2rem(@name, @px){
+    @{name}: @px / @baseFontSize * 1rem;
+}
+@font-face {
+   font-family:'FontAwesome';
+   src: url('./fonts/fontawesome-webfont.eot?v=4.6.3'),
+   url('./fonts/fontawesome-webfont.eot?#iefix&v=4.6.3') format('embedded-opentype'),
+   url('./fonts/fontawesome-webfont.woff2?v=4.6.3') format('woff2'),
+   url('./fonts/fontawesome-webfont.woff?v=4.6.3') format('woff'),
+   url('./fonts/fontawesome-webfont.ttf?v=4.6.3') format('truetype'),
+   url('./fonts/fontawesome-webfont.svg?v=4.6.3#fontawesomeregular') format('svg');
+   font-weight: normal;
+   font-style: normal
+}
+*, *:before, *:after {
+  margin: 0;padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+.fa-fw {
+    width: 1.28571429em;
+    text-align: center
+}
+.fa-arrow-up:before {
+    content:"\f062"
+}
+.fa-arrow-down:before {
+    content:"\f063"
+}
+.fa-home:before {
+    content:"\f015"
+}
+.fa-book:before {
+    content:"\f02d"
+}
+.fa-rocket:before {
+    content:"\f135"
+}
+.fa-music:before {
+    content:"\f001"
+}
+.fa-archive:before {
+  content: "\f187";
+}
+body {
+  counter-reset: section;
+  background-color: #222;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4D8SMQAwGcAY2AbBKDBUAVuYCBQPd34sAAAAASUVORK5CYII=);
+	background-repeat: repeat;
+  cursor: url(../assets/img/cursor.ico), auto;
+  line-height: 2;
+  min-height: 100%;
+}
+h2, h3 {
+  padding: 10px 0;
+  text-align: center;
+}
+h3::before {
+  counter-increment: section;
+  content: counter(section) "、";
+}
+h4::before {
+  counter-increment: section;
+  content: counter(section) "、";
+}
+.clearfix:after {
+  content:'';height:0;display:block;clear:both;visibility:hidden;
+}
+.noclick {
+  top:0; left:0; right:0; bottom:0;
+  background: #fff; opacity: 0;
+  overflow: hidden; z-index: 1000;
+}
+#log {
+  width: 750px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  h2, h3 {
+    text-align: left;
+    padding: 0;
+  }
+}
+.func_color{
+  color: #f90;
+}
+xmp {
+  padding: 20px;
+  background: #666;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: "微软雅黑";
+  margin: 10px 0;
+}
+.log {
+  visibility: hidden;
+  margin: 0 !important;
+  width: 325px !important;
+  font-size: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #333;
+  height: 200px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.abs {position:absolute;}
+/* public */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+a {background-color: transparent;}
+a:active, a:hover {outline: 0;}
+abbr[title] {border-bottom: 1px dotted;}
+img {border: 0; cursor: zoom-in;}
+svg:not(:root) {overflow: hidden;}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+li {display: list-item;text-align: -webkit-match-parent;list-style: none;}
+::selection {
+  background: rgba(0,149,255,0.2);
+}
+/* scroll */
+::-webkit-scrollbar {
+  width:10px;
+}
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow:inset006pxrgba(0,0,0,0.3);
+  border-radius:5px;
+}
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+  border-radius:5px;
+  background:rgba(0,0,0,0.1);
+  -webkit-box-shadow:inset006pxrgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background:rgba(255,0,0,0.4);
+}
+/* all @keyframes */
+@keyframes maskshow{
+  0% {
+    opacity: 0;
+  } to {
+    opacity: 1;
+  }
+}
