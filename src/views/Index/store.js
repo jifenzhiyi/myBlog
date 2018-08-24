@@ -1,11 +1,11 @@
 export default {
   state: {
     bgList: [
-      { imgurl: '/static/1.jpg', selected: true },
-      { imgurl: '/static/2.jpg', selected: false },
-      { imgurl: '/static/3.jpg', selected: false },
-      { imgurl: '/static/4.jpg', selected: false },
-      { imgurl: '/static/5.jpg', selected: false },
+      { imgurl: 'static/1.jpg', selected: true },
+      { imgurl: 'static/2.jpg', selected: false },
+      { imgurl: 'static/3.jpg', selected: false },
+      { imgurl: 'static/4.jpg', selected: false },
+      { imgurl: 'static/5.jpg', selected: false },
     ], // 背景列表
     bgIndex: 0, // 背景图片 index
     modelId: 1, // 小萝莉人物 id
