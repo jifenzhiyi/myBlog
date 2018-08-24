@@ -28,9 +28,10 @@ export default {
         window.store.commit('SET_MODEL_TIPS', `让我们去看看<span style="color:${color};">『${text}』</span>吧~`);
       }
     },
-    gohtml(url, title) {
-      window.store.commit('SET_ARTICLE_URL', url);
-      window.store.commit('SET_ARTICLE_TITLE', title);
+    gohtml(item) {
+      window.store.commit('SET_ARTICLE_URL', item.url);
+      window.store.commit('SET_ARTICLE_TITLE', item.title);
+      window.store.commit('SET_ARTICLE_INFO', item);
     },
   },
 };

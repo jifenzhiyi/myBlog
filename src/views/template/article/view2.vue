@@ -6,7 +6,7 @@
         :key="index"
         class="content-box"
         @mouseover="showTips(item.title)"
-        @click="gohtml(item.url, item.title)">
+        @click="gohtml(item)">
         <div class="info-box">
           <div class="info-row">
             <span class="hot">热</span>

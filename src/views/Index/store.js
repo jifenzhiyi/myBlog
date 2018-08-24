@@ -33,13 +33,6 @@ export default {
         date: '',
       },
       {
-        title: 'anime.js',
-        banner: 'static/bg4.jpg',
-        url: 'jsAnime',
-        type: 'javascript',
-        date: '2018-8-15',
-      },
-      {
         title: 'JS的排序算法',
         banner: 'static/bg3.jpg',
         url: 'jsSorting',
@@ -67,11 +60,19 @@ export default {
         type: 'javascript',
         date: '2018-7-23',
       },
+      {
+        title: 'anime.js',
+        banner: 'static/bg4.jpg',
+        url: 'jsAnime',
+        type: 'javascript',
+        date: '2018-6-15',
+      },
     ],
     musicList: null,
     articleMode: 'view1',
     articleUrl: '',
     articleTitle: '',
+    articleInfo: null,
   },
   mutations: {
     /* eslint-disable no-param-reassign */
@@ -113,6 +114,9 @@ export default {
     },
     SET_ARTICLE_TITLE(state, param) {
       state.articleTitle = param;
+    },
+    SET_ARTICLE_INFO(state, param) {
+      state.articleInfo = param;
     },
     CHANGE_MODE(state, param) {
       state.articleUrl = '';

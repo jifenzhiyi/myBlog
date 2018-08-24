@@ -1,11 +1,15 @@
 <template>
   <div class="abs article">
     <div class="abs blackbg"/>
-    <h1 v-if="articleUrl!=='#'">{{ articleTitle }}</h1>
-    <component :is="articleUrl!=='#' ? articleUrl : 'isme'"/>
+    <h1 v-if="articleInfo.url!=='#'">{{ articleInfo.title }}</h1>
+    <component :is="articleInfo.url!=='#' ? articleInfo.url : 'isme'"/>
     <div
-      class="abs goback"
+      class="abs go-back"
       @click="goback">返回上一页</div>
+    <div
+      class="abs post-date"
+      v-if="getDate"
+      v-html="getDate"/>
   </div>
 </template>
 
@@ -22,9 +26,16 @@ export default {
   name: 'Article',
   computed: {
     ...mapState({
-      articleTitle: state => state.Index.articleTitle,
-      articleUrl: state => state.Index.articleUrl,
+      articleInfo: state => state.Index.articleInfo,
     }),
+    getDate() {
+      let date = '';
+      if (this.articleInfo.date !== '') {
+        const info = this.articleInfo.date.split('-');
+        date = `${info[1]}月<span>${info[2]}</span>`; 
+      }
+      return date;
+    },
   },
   components: {
     jsAnime,
@@ -42,10 +53,10 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 .article {
   left: 10%; right: 10%; top: 10%; bottom: 10%;
-  border-radius: 20px;
+  border-radius: 10px 10px 0 0;
   overflow: hidden;
   .blackbg {
     top: 0; left: 0; right:0; bottom:0;
@@ -61,27 +72,45 @@ export default {
     text-align: center;
     color:#f00;
     font-size:64px;
-    opacity: 0.5;
+    opacity: 0.2;
   }
-  .articleDiv {
-    top:0;left:0;right:0;bottom:0;
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
-  .goback {
+  .go-back {
     top:0; right:0;
     padding: 0 20px;
     height:50px;
     line-height: 50px;
+    color: #000;
+    background:#fff;
+    z-index: 1;
+    border-radius:0 0 0 10px;
+    cursor: pointer;
+    opacity: 0.9;
+  }
+  .go-back:hover {
     color:#fff;
     background:#000;
-    z-index: 1;
-    border-radius:0 0 0 20px;
-    cursor: pointer;
-    opacity: 0.7;
+    opacity: 0.6;
   }
-  .goback:hover {
-    color: #f00;
+  .post-date {
+    top:0; left:0;
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+    color:#000;
+    background:#fff;
+    z-index: 1;
+    border-radius: 0 0 10px 0;
+    opacity: 0.9;
+    display: flex;
+    justify-content:center;
+    span {
+      font-size: 24px;
+    }
+  }
+  .articleDiv {
+    top:0; left:0; right:0; bottom:0;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 }
 </style>

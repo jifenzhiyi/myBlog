@@ -6,7 +6,7 @@
         v-for="(item,index) in articleList"
         :key="index"
         @mouseover="showTips(item.title)"
-        @click="gohtml(item.url, item.title)">
+        @click="gohtml(item)">
         <div
           class="article_t"
           :style="`background-image:url(${item.banner})`">

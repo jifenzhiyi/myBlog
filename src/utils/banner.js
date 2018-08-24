@@ -159,7 +159,7 @@ class Word {
     this.DOM.svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     this.DOM.svg.setAttribute('class', 'shapes');
     this.DOM.svg.setAttribute('width', '100%');
-    this.DOM.svg.setAttribute('height', '420px');
+    this.DOM.svg.setAttribute('height', '550px');
     this.DOM.svg.setAttribute('viewbox', `0 0 ${winsize.width} ${winsize.height}`);
     if (this.options.shapesOnTop) {
       this.DOM.el.parentNode.insertBefore(this.DOM.svg, this.DOM.el.nextSibling);
@@ -405,7 +405,7 @@ const effects = [
   {
     options: {
       // shape elements will be on top of the letters
-      shapesOnTop: true,
+      // shapesOnTop: true,
       shapeColors: ['#ec4747', '#5447ec', '#ecb447', '#a847ec', '#635f65'],
       totalShapes: 20,
     },
@@ -720,7 +720,7 @@ const effects = [
         rotate: () => [anime.random(-50, 50), 0],
       },
       shapesAnimationOpts: {
-        duration: 2000,
+        duration: 3000,
         easing: 'easeOutExpo',
         translateY: (t) => {
           const ty = anime.random(-300, 300);
@@ -860,6 +860,11 @@ export const bannerLoad = () => {
       });
     } else if (keyCode === 17) {
       // 左 Ctrl
+      if (window.human) {
+        window.human = null;
+        help.autoClick();
+        help.setCanvasSize();
+      }
     }
   });
 };
