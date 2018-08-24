@@ -1,4 +1,6 @@
 import anime from 'animejs';
+import * as api from '@/utils/api';
+import * as help from '@/utils/help';
 
 const debounce = (func, wait, immediate) => {
   let timeout;
@@ -156,7 +158,7 @@ class Word {
   createSVG() {
     this.DOM.svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     this.DOM.svg.setAttribute('class', 'shapes');
-    this.DOM.svg.setAttribute('width', '1000px');
+    this.DOM.svg.setAttribute('width', '100%');
     this.DOM.svg.setAttribute('height', '420px');
     this.DOM.svg.setAttribute('viewbox', `0 0 ${winsize.width} ${winsize.height}`);
     if (this.options.shapesOnTop) {
@@ -759,6 +761,9 @@ class Slideshow {
     this.words[this.current].show(effects[this.current].show).then(() => {
       this.isAnimating = false;
     });
+    this.timeout = setInterval(() => {
+      window.slideshow.show('next');
+    }, 3000);
   }
 
   show(direction) {
@@ -771,6 +776,10 @@ class Slideshow {
       newPos = currentPos < this.slidesTotal - 1 ? currentPos + 1 : 0;
     } else if (direction === 'prev') {
       newPos = currentPos > 0 ? currentPos - 1 : this.slidesTotal - 1;
+    }
+
+    if (newPos === this.slidesTotal - 1) {
+      clearInterval(this.timeout);
     }
 
     this.DOM.slides[newPos].style.opacity = 1;
@@ -803,10 +812,54 @@ export const bannerLoad = () => {
   document.querySelector('.slidenav__item--next').addEventListener('click', () => window.slideshow.show('next'));
   document.addEventListener('keydown', (ev) => {
     const keyCode = ev.keyCode || ev.which;
+    // console.log('keyCode', keyCode);
     if (keyCode === 37) {
+      // 左
       window.slideshow.show('prev');
+    } else if (keyCode === 38) {
+      // 上
+      const tindex = window.store.state.Index.tindex === 0 ? window.store.state.Index.tindex : window.store.state.Index.tindex - 1;
+      window.store.commit('SET_TEMPLATE_INDEX', tindex);
+      window.store.commit('SET_ARTICLE_URL', '');
     } else if (keyCode === 39) {
+      // 右
       window.slideshow.show('next');
+    } else if (keyCode === 40) {
+      // 下
+      const tindex = window.store.state.Index.tindex === 4 ? window.store.state.Index.tindex : window.store.state.Index.tindex + 1;
+      window.store.commit('SET_TEMPLATE_INDEX', tindex);
+      window.store.commit('SET_ARTICLE_URL', '');
+    } else if (keyCode === 96) {
+      // 数字键 0
+      const articleMode = window.store.state.Index.articleMode;
+      if (articleMode === 'view1') {
+        window.store.commit('CHANGE_MODE', 'view2');
+      } else {
+        window.store.commit('CHANGE_MODE', 'view1');
+      }
+    } else if (keyCode === 97) {
+      // 数字键 1
+      window.store.commit('SET_BG_INDEX');
+    } else if (keyCode === 98) {
+      // 数字键 2
+      const modelId = window.store.state.Index.modelId;
+      api.getData(`http://api.fghrsh.net/live2d/rand_textures/?id=${modelId}`).then((res) => {
+        window.store.commit('SET_MODEL_CID', res.data.textures.id);
+        help.loadModel(this.modelId, res.data.textures.id);
+        window.store.commit('clear_MODEL_TIPS');
+        window.store.state.Index.modal_ready = '我这件衣服好看吗？';
+      });
+    } else if (keyCode === 99) {
+      // 数字键 3
+      const modelId = window.store.state.Index.modelId;
+      api.getData(`http://api.fghrsh.net/live2d/switch/?id=${modelId}`).then((res) => {
+        window.store.commit('SET_MODEL_ID', res.data.model.id);
+        help.loadModel(res.data.model.id);
+        window.store.commit('clear_MODEL_TIPS');
+        window.store.state.Index.modal_ready = '我这个样子好看吗？';
+      });
+    } else if (keyCode === 17) {
+      // 左 Ctrl
     }
   });
 };
