@@ -47,7 +47,7 @@ export default {
         date: '2018-7-26',
       },
       {
-        title: 'JS中可以提升幸福度的小技巧',
+        title: 'JS中提升幸福度的小技巧',
         banner: 'static/bg1.jpg',
         url: 'jsSkill',
         type: 'javascript',

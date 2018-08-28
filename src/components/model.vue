@@ -42,6 +42,7 @@ export default {
       console.log('re', re);
       re.toString = () => {
         window.store.commit('SET_MODEL_TIPS', '哈哈，你打开了控制台，是想要看看我的秘密吗？');
+        console.log('%c ', 'background: url(http://p3i10hjs7.bkt.clouddn.com/console.jpeg) no-repeat center;padding-left:640px;padding-bottom: 242px;');
         return '';
       };
     },

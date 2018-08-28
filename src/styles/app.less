@@ -73,6 +73,10 @@ h4::before {
   counter-increment: section;
   content: counter(section) "、";
 }
+h6::before {
+  counter-increment: section;
+  content: counter(section) "、";
+}
 .clearfix:after {
   content:'';height:0;display:block;clear:both;visibility:hidden;
 }
@@ -82,21 +86,25 @@ h4::before {
   overflow: hidden; z-index: 1000;
 }
 #log {
-  width: 750px;
+  width: 800px;
   margin: 30px auto;
   display: flex;
   flex-direction: column;
   color: #fff;
   h2, h3 {
     padding: 0;
+    color: #f90;
+  }
+  h3 {
+    text-align: left;
   }
 }
 .func_color{
-  color: #f90;
+  color: #f00;
 }
 xmp {
   padding: 20px;
-  background: #666;
+  background: #333;
   border-radius: 10px;
   font-size: 14px;
   font-family: "微软雅黑";
