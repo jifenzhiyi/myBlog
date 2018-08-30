@@ -86,6 +86,11 @@ export default {
           type: 'tResume',
           ico: 'fa-archive',
         },
+        {
+          name: '记账',
+          type: 'tBook',
+          ico: 'fa-money',
+        },
       ],
     };
   },

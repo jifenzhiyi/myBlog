@@ -1,5 +1,6 @@
 import anime from 'animejs';
 import store from '@/store';
+import * as api from '@/utils/api';
 
 export const loadModel = (modelId = 1, modelCId = 0) => {
   window.loadlive2d('live2d', `http://api.fghrsh.net/live2d/get/?id=${modelId}-${modelCId}`);
@@ -197,4 +198,19 @@ export const autoClick = () => {
     anime.random(centerY - 250, centerY + 250),
   );
   anime({ duration: 200 }).finished.then(autoClick);
+};
+
+export const getMusicList = async () => {
+  window.store.commit('SET_MUSIC_LIST', null);
+  const { musicTypeList, musicIndex } = store.state;
+  const res = await api.getData(`https://api.i-meto.com/meting/api?server=netease&type=playlist&id=${musicTypeList[musicIndex].id}`);
+  const copy = [];
+  res.data.forEach((item) => {
+    const obj = { title: item.name, src: item.url, ...item };
+    const { name, url, ...newobj } = obj;
+    copy.push(newobj);
+  });
+  // const random = () => (Math.random() > 0.5 ? -1 : 1);
+  // copy.sort(random);
+  window.store.commit('SET_MUSIC_LIST', copy);
 };

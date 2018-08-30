@@ -1,6 +1,11 @@
 # my-project
 
-> hello world
+首页 => banner, 文字, 小萝莉, 导航
+文章 => 图文, 列表 => 文章详情
+音乐 => 我的收藏, 其它
+项目 => 图文 => 项目介绍
+简历 => 文档, 翻书
+其它 => 登录
 
 ## Build Setup
 
@@ -8,7 +13,7 @@
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+# serve with hot reload
 npm run dev
 
 # build for production with minification
@@ -26,5 +31,3 @@ npm run e2e
 # run all tests
 npm test
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

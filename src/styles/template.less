@@ -12,6 +12,9 @@
       .template_main {
         width: 1150px;
         margin: 0 auto;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
         .template_a {
           min-height: 100px;
           position: relative;
@@ -19,9 +22,10 @@
         .template_c {
           overflow: hidden;
           position: relative;
-          margin: 0 auto;
+          margin: 0 auto 100px;
           width: 772px;
           border-radius: 20px;
+          flex: 1;
           .template_bg {
             left: 0;right: 0;bottom: 0;top: 0;
             background: #fff;
@@ -32,7 +36,7 @@
             border-image: linear-gradient( red , blue) 10 10;
           }
           .music_list {
-            padding: 40px;
+            top: 40px; bottom: 40px; left: 40px; right: 40px;
             .aplayer {
               background: #fff;
             }
@@ -40,6 +44,7 @@
         }
         h2 {
           position: relative;
+          height: 50px;
           line-height: 50px;
           text-align: center;
           font-size: 36px;
@@ -56,7 +61,6 @@
           }
         }
         h2:after {
-          content: "我喜欢的音乐 🎵";
           color: #610;
           text-shadow: 3px 3px 1px #fff;
         }

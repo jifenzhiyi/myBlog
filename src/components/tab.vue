@@ -17,6 +17,11 @@
       v-if="tindex===1"
       @click="changeMode"
       @mouseover="showTips('点击这里可以切换文章模式~<br>快捷键 0', 'none')">切换文章模式</a>
+    <a
+      class="s5"
+      v-if="tindex===2"
+      @click="changeMusic"
+      @mouseover="showTips('点击这里可以切换音乐列表~<br>快捷键 8', 'none')">切换音乐列表</a>
   </div>
 </template>
 
@@ -33,6 +38,8 @@ export default {
       modelCid: state => state.Index.modelCid,
       tindex: state => state.Index.tindex,
       articleMode: state => state.Index.articleMode,
+      musicTypeList: state => state.musicTypeList,
+      musicIndex: state => state.musicIndex,
     }),
   },
   methods: {
@@ -62,6 +69,11 @@ export default {
       } else {
         window.store.commit('CHANGE_MODE', 'view1');
       }
+    },
+    changeMusic() {
+      console.log('changeMusic');
+      window.store.commit('SET_MUSIC_INDEX');
+      help.getMusicList();
     },
   },
 };

@@ -37,6 +37,12 @@
 .fa-arrow-down:before {
     content:"\f063"
 }
+.fa-arrow-left:before {
+    content:"\f060"
+}
+.fa-arrow-right:before {
+    content:"\f061"
+}
 .fa-home:before {
     content:"\f015"
 }
@@ -51,6 +57,9 @@
 }
 .fa-archive:before {
   content: "\f187";
+}
+.fa-money:before{
+  content:"\f0d6"
 }
 body {
   counter-reset: section;
@@ -124,6 +133,11 @@ xmp {
   overflow-y: auto;
 }
 .abs {position:absolute;}
+.ellipsis {
+  overflow: hidden;    
+  text-overflow:ellipsis;    
+  white-space: nowrap;
+}
 /* public */
 audio:not([controls]) {
   display: none;

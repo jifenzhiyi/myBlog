@@ -815,7 +815,11 @@ export const bannerLoad = () => {
     // console.log('keyCode', keyCode);
     if (keyCode === 37) {
       // 左
-      window.slideshow.show('prev');
+      if (window.store.state.Index.tindex === 0) {
+        window.slideshow.show('prev');
+      } else if (window.store.state.Index.tindex === 3) {
+        window.store.commit('SET_PRODUCT_INDEX', 'prev');
+      }
     } else if (keyCode === 38) {
       // 上
       const tindex = window.store.state.Index.tindex === 0 ? window.store.state.Index.tindex : window.store.state.Index.tindex - 1;
@@ -823,7 +827,11 @@ export const bannerLoad = () => {
       window.store.commit('SET_ARTICLE_URL', '');
     } else if (keyCode === 39) {
       // 右
-      window.slideshow.show('next');
+      if (window.store.state.Index.tindex === 0) {
+        window.slideshow.show('next');
+      } else if (window.store.state.Index.tindex === 3) {
+        window.store.commit('SET_PRODUCT_INDEX', 'next');
+      }
     } else if (keyCode === 40) {
       // 下
       const tindex = window.store.state.Index.tindex === 4 ? window.store.state.Index.tindex : window.store.state.Index.tindex + 1;
@@ -831,7 +839,7 @@ export const bannerLoad = () => {
       window.store.commit('SET_ARTICLE_URL', '');
     } else if (keyCode === 96) {
       // 数字键 0
-      const articleMode = window.store.state.Index.articleMode;
+      const { articleMode } = window.store.state.Index;
       if (articleMode === 'view1') {
         window.store.commit('CHANGE_MODE', 'view2');
       } else {
@@ -842,7 +850,7 @@ export const bannerLoad = () => {
       window.store.commit('SET_BG_INDEX');
     } else if (keyCode === 98) {
       // 数字键 2
-      const modelId = window.store.state.Index.modelId;
+      const { modelId } = window.store.state.Index;
       api.getData(`http://api.fghrsh.net/live2d/rand_textures/?id=${modelId}`).then((res) => {
         window.store.commit('SET_MODEL_CID', res.data.textures.id);
         help.loadModel(this.modelId, res.data.textures.id);
@@ -851,7 +859,7 @@ export const bannerLoad = () => {
       });
     } else if (keyCode === 99) {
       // 数字键 3
-      const modelId = window.store.state.Index.modelId;
+      const { modelId } = window.store.state.Index;
       api.getData(`http://api.fghrsh.net/live2d/switch/?id=${modelId}`).then((res) => {
         window.store.commit('SET_MODEL_ID', res.data.model.id);
         help.loadModel(res.data.model.id);
@@ -865,6 +873,10 @@ export const bannerLoad = () => {
         help.autoClick();
         help.setCanvasSize();
       }
+    } else if (keyCode === 104) {
+      // 数字键 8
+      window.store.commit('SET_MUSIC_INDEX');
+      help.getMusicList();
     }
   });
 };

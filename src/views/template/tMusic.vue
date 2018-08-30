@@ -6,17 +6,20 @@
           class="abs fa-arrow-up"
           @click="setTindex(1)"/>
       </div>
-      <h2><span>我喜欢的音乐 🎵</span></h2>
+      <h2 :data-title="musicTypeList[musicIndex].title"><span>{{ musicTypeList[musicIndex].title }}</span></h2>
       <div class="template_c">
         <div class="abs template_bg"/>
-        <div class="music_list">
+        <div
+          class="abs music_list"
+          id="music_list">
           <aplayer
+            v-if="listMaxHeight && musicList"
             theme="red"
             class="aplayer"
-            v-if="musicList"
             :autoplay="true"
             :list="musicList"
-            :music="musicList[0]"/>
+            :music="musicList[0]"
+            :list-max-height="listMaxHeight"/>
         </div>
       </div>
     </div>
@@ -24,34 +27,41 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import templateMixin from '@/mixin/template';
 import Aplayer from 'vue-aplayer';
-import * as api from '@/utils/api';
+import * as help from '@/utils/help';
 
 export default {
   name: 'TemplateIndex',
+  computed: {
+    ...mapState({
+      musicTypeList: state => state.musicTypeList,
+      musicIndex: state => state.musicIndex,
+    }),
+  },
+  data() {
+    return {
+      listMaxHeight: null,
+    };
+  },
   components: {
     Aplayer,
   },
   mixins: [
     templateMixin,
   ],
-  mounted() {
-    this.getMusicList();
+  created() {
+    help.getMusicList();
   },
-  methods: {
-    async getMusicList() {
-      const res = await api.getData('https://api.i-meto.com/meting/api?server=netease&type=playlist&id=2152376407');
-      const copy = [];
-      res.data.forEach((item) => {
-        const obj = { title: item.name, src: item.url, ...item };
-        const { name, url, ...newobj } = obj;
-        copy.push(newobj);
-      });
-      const random = () => (Math.random() > 0.5 ? -1 : 1);
-      copy.sort(random);
-      this.$store.commit('SET_MUSIC_LIST', copy);
-    },
+  mounted() {
+    this.listMaxHeight = `${document.getElementById('music_list').clientHeight - 76}px`;
   },
 };
 </script>
+
+<style lang="less" scoped>
+h2:after {
+  content: attr(data-title);
+}
+</style>
