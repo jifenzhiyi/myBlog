@@ -1,0 +1,78 @@
+[
+  {
+    "date": "2018-8-30",
+    "items": [
+      {
+        "date": "20: 00",
+        "money": -2000,
+        "type": "爱车",
+        "desc": "平安车险",
+        "frequency": "year"
+      },
+      {
+        "date": "12: 32",
+        "money": -16,
+        "type": "餐饮",
+        "desc": "菜饭 小炒肉 卤蛋",
+        "frequency": "one"
+      },
+      {
+        "date": "12: 00",
+        "money": 100,
+        "type": "测试",
+        "desc": "测试",
+        "frequency": "one"
+      },
+      {
+        "date": "11: 54",
+        "money": -211,
+        "type": "爱车",
+        "desc": "公司9月停车费",
+        "frequency": "month"
+      }
+    ]
+  },
+  {
+    "date": "2018-8-29",
+    "items": [
+      {
+        "date": "12: 27",
+        "money": -16,
+        "type": "餐饮",
+        "desc": "沙县 小馄饨 蒸饺",
+        "frequency": "one"
+      },
+      {
+        "date": "12: 00",
+        "money": -100,
+        "type": "test",
+        "desc": "test",
+        "frequency": "year"
+      }
+    ]
+  },
+  {
+    "date": "2018-7-27",
+    "items": [
+      {
+        "date": "12: 00",
+        "money": -261,
+        "type": "爱车",
+        "desc": "公司8月停车费",
+        "frequency": "month"
+      }
+    ]
+  },
+  {
+    "date": "2018-6-26",
+    "items": [
+      {
+        "date": "12: 00",
+        "money": -350,
+        "type": "爱车",
+        "desc": "公司7月停车费",
+        "frequency": "month"
+      }
+    ]
+  }
+]

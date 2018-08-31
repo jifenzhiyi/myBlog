@@ -715,9 +715,9 @@ const effects = [
         duration: 800,
         delay: () => anime.random(0, 75),
         easing: 'easeInOutExpo',
-        opacity: [0, 1],
-        translateY: ['-300%', '0%'],
-        rotate: () => [anime.random(-50, 50), 0],
+        opacity: [0, 0.7],
+        translateY: () => [`${anime.random(-40, 0)}%`],
+        rotate: () => [anime.random(-40, 40)],
       },
       shapesAnimationOpts: {
         duration: 3000,
@@ -734,7 +734,7 @@ const effects = [
         },
         rotate: () => anime.random(-45, 45),
         opacity: {
-          value: [0, 0.9],
+          value: [0, 0.7],
           duration: 600,
           delay: 300,
           easing: 'linear',
@@ -766,7 +766,13 @@ class Slideshow {
     }, 3000);
   }
 
-  show(direction) {
+  loopStart() {
+    this.timeout = setInterval(() => {
+      window.slideshow.show('next');
+    }, 3000);
+  }
+
+  show(direction, flag) {
     if (this.isAnimating) return;
     this.isAnimating = true;
 
@@ -778,12 +784,12 @@ class Slideshow {
       newPos = currentPos > 0 ? currentPos - 1 : this.slidesTotal - 1;
     }
 
-    if (newPos === this.slidesTotal - 1) {
+    if (newPos === this.slidesTotal - 1 || flag) {
       clearInterval(this.timeout);
     }
 
     this.DOM.slides[newPos].style.opacity = 1;
-    this.DOM.bgs[newPos].style.transform = 'none';
+    // this.DOM.bgs[newPos].style.transform = 'none';
     anime({
       targets: this.DOM.bgs[currentPos],
       duration: 600,
@@ -808,15 +814,15 @@ class Slideshow {
 
 export const bannerLoad = () => {
   window.slideshow = new Slideshow(document.querySelector('.slideshow'));
-  document.querySelector('.slidenav__item--prev').addEventListener('click', () => window.slideshow.show('prev'));
-  document.querySelector('.slidenav__item--next').addEventListener('click', () => window.slideshow.show('next'));
+  document.querySelector('.slidenav__item--prev').addEventListener('click', () => window.slideshow.show('prev', true));
+  document.querySelector('.slidenav__item--next').addEventListener('click', () => window.slideshow.show('next', true));
   document.addEventListener('keydown', (ev) => {
     const keyCode = ev.keyCode || ev.which;
     // console.log('keyCode', keyCode);
     if (keyCode === 37) {
       // 左
       if (window.store.state.Index.tindex === 0) {
-        window.slideshow.show('prev');
+        window.slideshow.show('prev', true);
       } else if (window.store.state.Index.tindex === 3) {
         window.store.commit('SET_PRODUCT_INDEX', 'prev');
       }
@@ -828,13 +834,13 @@ export const bannerLoad = () => {
     } else if (keyCode === 39) {
       // 右
       if (window.store.state.Index.tindex === 0) {
-        window.slideshow.show('next');
+        window.slideshow.show('next', true);
       } else if (window.store.state.Index.tindex === 3) {
         window.store.commit('SET_PRODUCT_INDEX', 'next');
       }
     } else if (keyCode === 40) {
       // 下
-      const tindex = window.store.state.Index.tindex === 4 ? window.store.state.Index.tindex : window.store.state.Index.tindex + 1;
+      const tindex = window.store.state.Index.tindex === 5 ? window.store.state.Index.tindex : window.store.state.Index.tindex + 1;
       window.store.commit('SET_TEMPLATE_INDEX', tindex);
       window.store.commit('SET_ARTICLE_URL', '');
     } else if (keyCode === 96) {
@@ -872,6 +878,7 @@ export const bannerLoad = () => {
         window.human = null;
         help.autoClick();
         help.setCanvasSize();
+        window.slideshow.loopStart();
       }
     } else if (keyCode === 104) {
       // 数字键 8

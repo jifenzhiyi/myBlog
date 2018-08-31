@@ -6,6 +6,7 @@
       <t-Music />
       <t-product />
       <t-resume />
+      <t-book />
     </div>
   </div>
 </template>
@@ -17,6 +18,7 @@ import tArticle from '@/views/template/tArticle';
 import tMusic from '@/views/template/tMusic';
 import tProduct from '@/views/template/tProduct';
 import tResume from '@/views/template/tResume';
+import tBook from '@/views/template/tBook';
 
 export default {
   name: 'MainRight',
@@ -26,6 +28,7 @@ export default {
     tMusic,
     tProduct,
     tResume,
+    tBook,
   },
 };
 </script>

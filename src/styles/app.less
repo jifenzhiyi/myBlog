@@ -2,6 +2,10 @@
 .px2rem(@name, @px){
     @{name}: @px / @baseFontSize * 1rem;
 }
+.dateCss {
+  font-size:2em;
+  padding-left: 10px;
+}
 @font-face {
    font-family:'FontAwesome';
    src: url('./fonts/fontawesome-webfont.eot?v=4.6.3'),
@@ -163,13 +167,15 @@ li {display: list-item;text-align: -webkit-match-parent;list-style: none;}
 /* 滚动槽 */
 ::-webkit-scrollbar-track {
   -webkit-box-shadow:inset006pxrgba(0,0,0,0.3);
+  box-shadow:inset006pxrgba(0,0,0,0.3);
   border-radius:5px;
 }
 /* 滚动条滑块 */
 ::-webkit-scrollbar-thumb {
-  border-radius:5px;
-  background:rgba(0,0,0,0.1);
   -webkit-box-shadow:inset006pxrgba(0,0,0,0.5);
+  box-shadow:inset006pxrgba(0,0,0,0.5);
+  background:rgba(0,0,0,0.1);
+  border-radius:5px;
 }
 ::-webkit-scrollbar-thumb:window-inactive {
   background:rgba(255,0,0,0.4);

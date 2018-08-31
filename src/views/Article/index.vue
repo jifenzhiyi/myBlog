@@ -32,7 +32,7 @@ export default {
       let date = '';
       if (this.articleInfo.date !== '') {
         const info = this.articleInfo.date.split('-');
-        date = `${info[1]}月<span>${info[2]}</span>`; 
+        date = `${info[1]}月<span>${info[2]}</span>`;
       }
       return date;
     },

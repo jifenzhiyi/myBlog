@@ -69,6 +69,15 @@ export const getDateDiff = (dateTimeStamp) => {
 
 export const getDateTimeStamp = dateStr => Date.parse(dateStr.replace(/-/gi, '/'));
 
+export const isToday = (str) => {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = now.getMonth() + 1;
+  const day = now.getDate();
+  const dateStr = `${year}-${month}-${day}`;
+  return str === dateStr;
+};
+
 window.human = null;
 const numberOfParticules = 30;
 let pointerX = 0;

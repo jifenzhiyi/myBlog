@@ -3,7 +3,7 @@ import axios from 'axios';
 import store from '@/store';
 
 const client = axios.create({
-  baseURL: '/api/',
+  baseURL: '/',
   headers: {
     'Content-Type': 'application/json',
   },

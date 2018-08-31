@@ -26,6 +26,7 @@
           width: 772px;
           border-radius: 20px;
           flex: 1;
+          display: flex;
           .template_bg {
             left: 0;right: 0;bottom: 0;top: 0;
             background: #fff;
@@ -58,6 +59,7 @@
             top: 0;
             color: #9900ff;
             -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+            mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
           }
         }
         h2:after {
@@ -235,7 +237,8 @@
       #swiper {
         position: relative;
         width: 100%;
-        min-height: 550px;
+        height: 50%;
+        display: flex;
         .blackbg{
           top:0; left:0; right:0; bottom:0;
           background:#000;
