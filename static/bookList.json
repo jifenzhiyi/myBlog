@@ -3,19 +3,19 @@
     "date": "2018-8-31",
     "items": [
       {
+        "date": "14:11",
+        "money": -8,
+        "type": "手机APP",
+        "desc": "饿了吗 会员",
+        "frequency": "month",
+        "payType": "支付宝"
+      },
+      {
         "date": "12:45",
         "money": -21,
         "type": "餐饮",
         "desc": "沙县小吃 雪菜肉丝面 鸡腿",
         "frequency": "one",
-        "payType": "支付宝"
-      },
-      {
-        "date": "12:00",
-        "money": -8,
-        "type": "手机APP",
-        "desc": "饿了吗 会员",
-        "frequency": "month",
         "payType": "支付宝"
       },
       {
@@ -32,8 +32,8 @@
     "date": "2018-8-30",
     "items": [
       {
-        "date": "20:00",
-        "money": -2004,
+        "date": "19:39",
+        "money": -2004.1,
         "type": "爱车",
         "desc": "平安车险",
         "frequency": "year",
@@ -122,6 +122,14 @@
         "payType": "微信"
       },
       {
+        "date": "16:19",
+        "money": -1000,
+        "type": "取款",
+        "desc": "ATM取款",
+        "frequency": "one",
+        "payType": "工商银行"
+      },
+      {
         "date": "16:04",
         "money": -2.8,
         "type": "零食",
@@ -159,6 +167,14 @@
         "payType": "支付宝"
       },
       {
+        "date": "10:56",
+        "money": -1024,
+        "type": "保险",
+        "desc": "平安保险",
+        "frequency": "month",
+        "payType": "工商银行"
+      },
+      {
         "date": "9:27",
         "money": -5,
         "type": "餐饮",
@@ -178,6 +194,779 @@
         "desc": "预防针 8联和狂犬",
         "frequency": "one",
         "payType": "支付宝"
+      },
+      {
+        "date": "22:00",
+        "money": 520,
+        "type": "红包",
+        "desc": "支付宝红包",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "9:14",
+        "money": -6,
+        "type": "手机APP",
+        "desc": "游戏充值 宠物小精灵",
+        "frequency": "one",
+        "payType": "微信"
+      }
+    ]
+  },
+  {
+    "date": "2018-8-25",
+    "items": [
+      {
+        "date": "21:47",
+        "money": -6,
+        "type": "手机APP",
+        "desc": "游戏充值 宠物小精灵",
+        "frequency": "one",
+        "payType": "微信"
+      },
+      {
+        "date": "21:19",
+        "money": -1100,
+        "type": "转账",
+        "desc": "支付宝转账",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "20:17",
+        "money": -581,
+        "type": "娱乐",
+        "desc": "泡澡 万乐源 成人票",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "20:14",
+        "money": -36,
+        "type": "娱乐",
+        "desc": "泡澡 万乐源 儿童票",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "13:00",
+        "money": -143,
+        "type": "转账",
+        "desc": "同事聚会 左庭右院",
+        "frequency": "one",
+        "payType": "支付宝"
+      }
+    ]
+  },
+  {
+    "date": "2018-8-24",
+    "items": [
+      {
+        "date": "12:29",
+        "money": -22,
+        "type": "餐饮",
+        "desc": "沙县小吃",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "9:26",
+        "money": -5,
+        "type": "餐饮",
+        "desc": "全家早餐 大肉包",
+        "frequency": "one",
+        "payType": "微信"
+      },
+      {
+        "date": "00:58",
+        "money": -6,
+        "type": "手机APP",
+        "desc": "游戏充值 宠物小精灵",
+        "frequency": "one",
+        "payType": "微信"
+      }
+    ]
+  },
+  {
+    "date": "2018-8-23",
+    "items": [
+      {
+        "date": "19:43",
+        "money": -30.6,
+        "type": "餐饮",
+        "desc": "川香麻辣香锅",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "17:43",
+        "money": -2.8,
+        "type": "零食",
+        "desc": "饿了吗 零食货柜",
+        "frequency": "one",
+        "payType": "微信"
+      },
+      {
+        "date": "12:18",
+        "money": -19,
+        "type": "餐饮",
+        "desc": "午餐",
+        "frequency": "one",
+        "payType": "微信"
+      }
+    ]
+  },
+  {
+    "date": "2018-8-22",
+    "items": [
+      {
+        "date": "12:21",
+        "money": -17,
+        "type": "餐饮",
+        "desc": "沙县小吃",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "9:33",
+        "money": -10,
+        "type": "餐饮",
+        "desc": "全家早餐 10元套餐",
+        "frequency": "one",
+        "payType": "微信"
+      }
+    ]
+  },
+  {
+    "date": "2018-8-21",
+    "items": [
+      {
+        "date": "20:12",
+        "money": -25,
+        "type": "餐饮",
+        "desc": "华莱士炸鸡汉堡",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "19:47",
+        "money": -5,
+        "type": "交通",
+        "desc": "上海地铁乘车",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "17:05",
+        "money": -3.5,
+        "type": "零食",
+        "desc": "每日优鲜便利购 零食货柜",
+        "frequency": "one",
+        "payType": "微信"
+      },
+      {
+        "date": "12:29",
+        "money": -16,
+        "type": "餐饮",
+        "desc": "黄山菜饭",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "9:54",
+        "money": -5,
+        "type": "交通",
+        "desc": "上海地铁乘车",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "9:41",
+        "money": -9.3,
+        "type": "餐饮",
+        "desc": "全家早餐",
+        "frequency": "one",
+        "payType": "微信"
+      }
+    ]
+  },
+  {
+    "date": "2018-8-20",
+    "items": [
+      {
+        "date": "19:46",
+        "money": -5,
+        "type": "交通",
+        "desc": "上海地铁乘车",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "12:28",
+        "money": -22,
+        "type": "餐饮",
+        "desc": "沙县小吃",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "9:24",
+        "money": -5,
+        "type": "交通",
+        "desc": "上海地铁乘车",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "9:17",
+        "money": -11.5,
+        "type": "餐饮",
+        "desc": "全家早餐",
+        "frequency": "one",
+        "payType": "微信"
+      }
+    ]
+  },
+  {
+    "date": "2018-8-19",
+    "items": [
+      {
+        "date": "00:12",
+        "money": -6,
+        "type": "手机APP",
+        "desc": "游戏充值 宠物小精灵",
+        "frequency": "one",
+        "payType": "微信"
+      }
+    ]
+  },
+  {
+    "date": "2018-8-18",
+    "items": [
+      {
+        "date": "14:43",
+        "money": -600,
+        "type": "转账",
+        "desc": "支付宝转账",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "11:47",
+        "money": -53.8,
+        "type": "餐饮",
+        "desc": "伊秀寿司 外卖",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "11:41",
+        "money": -49,
+        "type": "餐饮",
+        "desc": "伊秀寿司 外卖",
+        "frequency": "one",
+        "payType": "支付宝"
+      }
+    ]
+  },
+  {
+    "date": "2018-8-17",
+    "items": [
+      {
+        "date": "20:56",
+        "money": -63.4,
+        "type": "餐饮",
+        "desc": "串意十足烧烤店 外卖",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "12:33",
+        "money": -17,
+        "type": "餐饮",
+        "desc": "黄山菜饭",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "9:30",
+        "money": -9,
+        "type": "零食",
+        "desc": "饿了吗 零食货柜",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "00:04",
+        "money": -6,
+        "type": "手机APP",
+        "desc": "游戏充值 宠物小精灵",
+        "frequency": "one",
+        "payType": "微信"
+      }
+    ]
+  },
+  {
+    "date": "2018-8-16",
+    "items": [
+      {
+        "date": "12:36",
+        "money": -20,
+        "type": "餐饮",
+        "desc": "沙县小吃",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "9:33",
+        "money": -5.3,
+        "type": "零食",
+        "desc": "饿了吗 零食货柜",
+        "frequency": "one",
+        "payType": "微信"
+      },
+      {
+        "date": "7:54",
+        "money": -6,
+        "type": "手机APP",
+        "desc": "游戏充值 宠物小精灵",
+        "frequency": "one",
+        "payType": "微信"
+      }
+    ]
+  },
+  {
+    "date": "2018-8-15",
+    "items": [
+      {
+        "date": "12:22",
+        "money": -20,
+        "type": "餐饮",
+        "desc": "天天见面",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "12:10",
+        "money": 500,
+        "type": "工资",
+        "desc": "招商银行信用卡 发工资",
+        "frequency": "one",
+        "payType": "招商银行"
+      },
+      {
+        "date": "10:22",
+        "money": -520,
+        "type": "红包",
+        "desc": "支付宝红包",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "00:49",
+        "money": -6,
+        "type": "手机APP",
+        "desc": "游戏充值 宠物小精灵",
+        "frequency": "one",
+        "payType": "微信"
+      }
+    ]
+  },
+  {
+    "date": "2018-8-14",
+    "items": [
+      {
+        "date": "20:21",
+        "money": -36.5,
+        "type": "餐饮",
+        "desc": "一芳台湾水果茶",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "20:07",
+        "money": -26.3,
+        "type": "餐饮",
+        "desc": "川香麻辣香锅",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "13:15",
+        "money": 4000,
+        "type": "工资",
+        "desc": "招商银行信用卡 发工资",
+        "frequency": "one",
+        "payType": "招商银行"
+      },
+      {
+        "date": "12:27",
+        "money": -20,
+        "type": "餐饮",
+        "desc": "沙县小吃",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "9:23",
+        "money": -4.5,
+        "type": "餐饮",
+        "desc": "全家早餐",
+        "frequency": "one",
+        "payType": "微信"
+      }
+    ]
+  },
+  {
+    "date": "2018-8-13",
+    "items": [
+      {
+        "date": "21:53",
+        "money": -18,
+        "type": "爱车",
+        "desc": "龙之梦停车费",
+        "frequency": "one",
+        "payType": "微信"
+      },
+      {
+        "date": "19:26",
+        "money": -42.5,
+        "type": "餐饮",
+        "desc": "肯德基",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "13:48",
+        "money": 5000,
+        "type": "工资",
+        "desc": "招商银行信用卡 发工资",
+        "frequency": "one",
+        "payType": "招商银行"
+      },
+      {
+        "date": "12:14",
+        "money": -17,
+        "type": "餐饮",
+        "desc": "黄山菜饭",
+        "frequency": "one",
+        "payType": "微信"
+      }
+    ]
+  },
+  {
+    "date": "2018-8-12",
+    "items": [
+      {
+        "date": "19:51",
+        "money": -1600,
+        "type": "服饰",
+        "desc": "nike 鞋子",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "19:36",
+        "money": -624.8,
+        "type": "餐饮",
+        "desc": "迪斯尼 晚餐",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "14:48",
+        "money": -470,
+        "type": "服饰",
+        "desc": "迪斯尼商店 3件雨衣 2大1小",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "11:56",
+        "money": -32,
+        "type": "教育",
+        "desc": "钢琴教程书",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "11:33",
+        "money": -74.3,
+        "type": "餐饮",
+        "desc": "新旺茶餐厅",
+        "frequency": "one",
+        "payType": "支付宝"
+      }
+    ]
+  },
+  {
+    "date": "2018-8-11",
+    "items": [
+      {
+        "date": "19:39",
+        "money": -300,
+        "type": "服饰",
+        "desc": "商品",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "19:04",
+        "money": -244.8,
+        "type": "餐饮",
+        "desc": "鹿港小镇",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "11:52",
+        "money": -47.2,
+        "type": "餐饮",
+        "desc": "伊秀寿司",
+        "frequency": "one",
+        "payType": "支付宝"
+      }
+    ]
+  },
+  {
+    "date": "2018-8-10",
+    "items": [
+      {
+        "date": "22:47",
+        "money": -6,
+        "type": "手机APP",
+        "desc": "游戏充值 宠物小精灵",
+        "frequency": "one",
+        "payType": "微信"
+      },
+      {
+        "date": "21:05",
+        "money": -38.8,
+        "type": "餐饮",
+        "desc": "缘来养生粥 外卖",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "12:38",
+        "money": -19,
+        "type": "餐饮",
+        "desc": "沙县小吃",
+        "frequency": "one",
+        "payType": "支付宝"
+      }
+    ]
+  },
+  {
+    "date": "2018-8-9",
+    "items": [
+      {
+        "date": "20:04",
+        "money": -10.8,
+        "type": "餐饮",
+        "desc": "华莱士炸鸡汉堡",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "12:26",
+        "money": -17,
+        "type": "餐饮",
+        "desc": "黄山菜饭",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "00:47",
+        "money": -6,
+        "type": "手机APP",
+        "desc": "游戏充值 宠物小精灵",
+        "frequency": "one",
+        "payType": "微信"
+      }
+    ]
+  },
+  {
+    "date": "2018-8-8",
+    "items": [
+      {
+        "date": "22:29",
+        "money": -6,
+        "type": "手机APP",
+        "desc": "游戏充值 宠物小精灵",
+        "frequency": "one",
+        "payType": "微信"
+      },
+      {
+        "date": "22:01",
+        "money": -6,
+        "type": "手机APP",
+        "desc": "游戏充值 宠物小精灵",
+        "frequency": "one",
+        "payType": "微信"
+      },
+      {
+        "date": "12:24",
+        "money": -20,
+        "type": "餐饮",
+        "desc": "沙县小吃",
+        "frequency": "one",
+        "payType": "支付宝"
+      }
+    ]
+  },
+  {
+    "date": "2018-8-7",
+    "items": [
+      {
+        "date": "23:06",
+        "money": -5000,
+        "type": "转账",
+        "desc": "支付宝转账",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "22:56",
+        "money": -750.6,
+        "type": "服饰",
+        "desc": "洋码头 购物 鞋子",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "21:12",
+        "money": -35.3,
+        "type": "餐饮",
+        "desc": "川香麻辣香锅",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "12:14",
+        "money": -17,
+        "type": "餐饮",
+        "desc": "黄山菜饭",
+        "frequency": "one",
+        "payType": "支付宝"
+      }
+    ]
+  },
+  {
+    "date": "2018-8-6",
+    "items": [
+      {
+        "date": "12:11",
+        "money": -23,
+        "type": "餐饮",
+        "desc": "沙县小吃",
+        "frequency": "one",
+        "payType": "支付宝"
+      }
+    ]
+  },
+  {
+    "date": "2018-8-5",
+    "items": [
+      {
+        "date": "14:41",
+        "money": -205,
+        "type": "餐饮",
+        "desc": "避风塘",
+        "frequency": "one",
+        "payType": "微信"
+      },
+      {
+        "date": "00:24",
+        "money": -6,
+        "type": "手机APP",
+        "desc": "游戏充值 宠物小精灵",
+        "frequency": "one",
+        "payType": "微信"
+      }
+    ]
+  },
+  {
+    "date": "2018-8-4",
+    "items": [
+      {
+        "date": "01:33",
+        "money": -30,
+        "type": "手机APP",
+        "desc": "游戏充值 宠物小精灵",
+        "frequency": "one",
+        "payType": "微信"
+      }
+    ]
+  },
+  {
+    "date": "2018-8-3",
+    "items": [
+      {
+        "date": "16:46",
+        "money": 6485,
+        "type": "工资",
+        "desc": "招商银行 工资卡 一部分工资",
+        "frequency": "one",
+        "payType": "招商银行"
+      },
+      {
+        "date": "12:27",
+        "money": -26,
+        "type": "餐饮",
+        "desc": "沙县小吃",
+        "frequency": "one",
+        "payType": "微信"
+      },
+      {
+        "date": "00:52",
+        "money": -6,
+        "type": "手机APP",
+        "desc": "游戏充值 宠物小精灵",
+        "frequency": "one",
+        "payType": "微信"
+      }
+    ]
+  },
+  {
+    "date": "2018-8-2",
+    "items": [
+      {
+        "date": "12:32",
+        "money": -16,
+        "type": "餐饮",
+        "desc": "黄山菜饭",
+        "frequency": "one",
+        "payType": "支付宝"
+      }
+    ]
+  },
+  {
+    "date": "2018-8-1",
+    "items": [
+      {
+        "date": "20:19",
+        "money": -28.8,
+        "type": "餐饮",
+        "desc": "伊秀寿司",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "20:17",
+        "money": -47.8,
+        "type": "餐饮",
+        "desc": "伊秀寿司",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "12:40",
+        "money": -17,
+        "type": "餐饮",
+        "desc": "沙县小吃",
+        "frequency": "one",
+        "payType": "支付宝"
       }
     ]
   },
@@ -189,7 +978,8 @@
         "money": -261,
         "type": "爱车",
         "desc": "公司8月停车费",
-        "frequency": "month"
+        "frequency": "month",
+        "payType": "支付宝"
       }
     ]
   },
@@ -201,7 +991,8 @@
         "money": -350,
         "type": "爱车",
         "desc": "公司7月停车费",
-        "frequency": "month"
+        "frequency": "month",
+        "payType": "支付宝"
       }
     ]
   },
@@ -213,7 +1004,8 @@
         "money": -350,
         "type": "爱车",
         "desc": "公司6月停车费",
-        "frequency": "month"
+        "frequency": "month",
+        "payType": "支付宝"
       }
     ]
   }

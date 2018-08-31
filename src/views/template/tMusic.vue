@@ -38,12 +38,8 @@ export default {
     ...mapState({
       musicTypeList: state => state.musicTypeList,
       musicIndex: state => state.musicIndex,
+      listMaxHeight: state => state.listMaxHeight,
     }),
-  },
-  data() {
-    return {
-      listMaxHeight: null,
-    };
   },
   components: {
     Aplayer,
@@ -55,7 +51,7 @@ export default {
     help.getMusicList();
   },
   mounted() {
-    this.listMaxHeight = `${document.getElementById('music_list').clientHeight - 76}px`;
+    window.store.commit('SET_LIST_MAX_HEIGHT', `${document.getElementById('music_list').clientHeight - 76}px`);
   },
 };
 </script>

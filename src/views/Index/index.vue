@@ -21,6 +21,13 @@
     <div
       class="abs noclick"
       v-if="loading"/>
+    <!-- 记账详情 -->
+    <div
+      class="abs bookInfo"
+      v-if="popFlag"
+      @click="closePop">
+      <div class="abs bookMain">test</div>
+    </div>
   </div>
 </template>
 
@@ -52,6 +59,7 @@ export default {
   computed: {
     ...mapState({
       loading: state => state.loading,
+      popFlag: state => state.popFlag,
     }),
   },
   mounted() {
@@ -64,6 +72,11 @@ export default {
       mouse: true,
       touch: false,
     });
+  },
+  methods: {
+    closePop() {
+      window.store.commit('SET_POP_FLAG');
+    },
   },
 };
 </script>
@@ -86,6 +99,32 @@ export default {
     border: 10px solid transparent;
     border-left: 16px solid #fff;
     z-index: 10;
+  }
+  .bookInfo {
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index: 100;
+    .bookMain {
+      top: 208px;
+      bottom: 142px;
+      left: 50%;
+      overflow: hidden;
+      width: 692px;
+      margin-left: -346px;
+      background:#fff;
+    }
+  }
+  .bookInfo::before {
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:#000;
+    opacity: 0.5;
+    content: ' ';
   }
 }
 </style>

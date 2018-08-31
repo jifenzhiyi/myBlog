@@ -209,17 +209,27 @@ export const autoClick = () => {
   anime({ duration: 200 }).finished.then(autoClick);
 };
 
+let ajaxflag = true;
 export const getMusicList = async () => {
-  window.store.commit('SET_MUSIC_LIST', null);
-  const { musicTypeList, musicIndex } = store.state;
-  const res = await api.getData(`https://api.i-meto.com/meting/api?server=netease&type=playlist&id=${musicTypeList[musicIndex].id}`);
-  const copy = [];
-  res.data.forEach((item) => {
-    const obj = { title: item.name, src: item.url, ...item };
-    const { name, url, ...newobj } = obj;
-    copy.push(newobj);
-  });
-  // const random = () => (Math.random() > 0.5 ? -1 : 1);
-  // copy.sort(random);
-  window.store.commit('SET_MUSIC_LIST', copy);
+  if (ajaxflag) {
+    ajaxflag = false;
+    window.store.commit('SET_MUSIC_LIST', null);
+    const { musicTypeList, musicIndex } = store.state;
+    const res = await api.getData(`https://api.i-meto.com/meting/api?server=netease&type=playlist&id=${musicTypeList[musicIndex].id}`);
+    const copy = [];
+    res.data.forEach((item) => {
+      const obj = { title: item.name, src: item.url, ...item };
+      const { name, url, ...newobj } = obj;
+      copy.push(newobj);
+    });
+    // const random = () => (Math.random() > 0.5 ? -1 : 1);
+    // copy.sort(random);
+    setTimeout(() => {
+      ajaxflag = true;
+      if (document.getElementById('music_list') && document.getElementById('music_list').clientHeight > 0) {
+        window.store.commit('SET_LIST_MAX_HEIGHT', `${document.getElementById('music_list').clientHeight - 76}px`);
+      }
+      window.store.commit('SET_MUSIC_LIST', copy);
+    }, 300);
+  }
 };

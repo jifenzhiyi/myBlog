@@ -31,6 +31,7 @@ const rootStore = new Vuex.Store({
       title: '原创榜 🎵',
     }], // 0:我喜欢的音乐 2152376407 1:飙升榜 19723756 2:新歌榜 3779629 3:原创榜 2884035
     musicIndex: 0,
+    listMaxHeight: null,
     productList: [
       {
         type: 'iPhone',
@@ -50,6 +51,7 @@ const rootStore = new Vuex.Store({
     productIndex: 0,
     productInfo: null,
     clickFlag: true,
+    popFlag: false,
   },
   modules: {
     Index,
@@ -60,6 +62,12 @@ const rootStore = new Vuex.Store({
       Object.keys(res).forEach((key) => {
         storage.set(key, res[key]);
       });
+    },
+    SET_LIST_MAX_HEIGHT(state, height) {
+      state.listMaxHeight = height;
+    },
+    SET_POP_FLAG(state) {
+      state.popFlag = !state.popFlag;
     },
     SET_MUSIC_INDEX(state) {
       if (state.musicIndex < 3) {

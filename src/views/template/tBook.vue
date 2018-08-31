@@ -11,6 +11,9 @@
         <div class="abs template_bg"/>
         <div class="content">
           <div
+            class="abs popShow"
+            @click="closePop">📊</div>
+          <div
             class="abs arrow arrow-l fa fa-arrow-left"
             @click="onPrevClick"/>
           <div
@@ -39,7 +42,9 @@
               <div
                 class="public"
                 v-if="isShow && publicList && publicList.month">
-                <div class="title">月开支</div>
+                <div class="title">月开支
+                  <span>当月支出: <b>{{ expenditureMonth }}</b> 元 当月收入: <b>+{{ incomeMonth }}</b> 元</span>
+                </div>
                 <div class="list">
                   <div
                     class="one"
@@ -76,6 +81,7 @@
 <script>
 import templateMixin from '@/mixin/template';
 import * as api from '@/utils/api';
+import * as help from '@/utils/help';
 
 export default {
   name: 'TemplateBook',
@@ -99,7 +105,9 @@ export default {
       listIndex: 0,
       expenditure: 0, // 总支出
       income: 0, // 总收入
-      expenditureToday: 0, // 当天总支出
+      expenditureMonth: 0, // 当月支付
+      incomeMonth: 0, // 当月收入
+      expenditureToday: 0, // 当天支出
       isShow: true,
     };
   },
@@ -108,10 +116,16 @@ export default {
     if (window.innerHeight <= 700) this.isShow = false;
     window.addEventListener('resize', () => {
       this.isShow = true;
-      if (window.innerHeight <= 700) this.isShow = false;
+      if (window.innerHeight <= 700) {
+        this.isShow = false;
+        help.getMusicList();
+      }
     });
   },
   methods: {
+    closePop() {
+      window.store.commit('SET_POP_FLAG');
+    },
     async bookAjax() {
       const res = await api.getData('/static/bookList.json');
       this.bookList = res.data;
@@ -119,39 +133,46 @@ export default {
     },
     clearInfo() {
       this.expenditure = 0;
+      this.expenditureMonth = 0;
+      this.incomeMonth = 0;
       this.expenditureToday = 0;
       this.income = 0;
       this.publicList = {};
     },
     listLoad() {
       this.clearInfo();
+      const month = parseInt(this.bookList[this.listIndex].date.split('-')[1], 10);
       this.bookList.forEach((bookone, index) => {
         bookone.items.forEach((element) => {
           if (element.money < 0) {
-            this.expenditure += element.money;
+            this.expenditure += element.money; // 总开支
             if (index === this.listIndex) {
-              this.expenditureToday += element.money;
+              this.expenditureToday += element.money; // 当天总支出
+            }
+            if (parseInt(bookone.date.split('-')[1], 10) === month) {
+              this.expenditureMonth += element.money; // 当月总支出
             }
           }
           if (element.money > 0) {
-            this.income += element.money;
-          }
-        });
-      });
-      const month = parseInt(this.bookList[this.listIndex].date.split('-')[1], 10);
-      this.bookList.forEach((list) => {
-        list.items.forEach((one) => {
-          if (one.frequency !== 'one') {
-            if (!this.publicList[one.frequency]) {
-              this.publicList[one.frequency] = [];
+            this.income += element.money; // 总收入
+            if (parseInt(bookone.date.split('-')[1], 10) === month) {
+              this.incomeMonth += element.money; // 当月总支出
             }
-            // this.publicList[one.frequency].push(one);
-            if ((parseInt(list.date.split('-')[1], 10) === month && one.frequency === 'month') || one.frequency === 'year') {
-              this.publicList[one.frequency].push(one);
+          }
+          if (element.frequency !== 'one') {
+            if (!this.publicList[element.frequency]) {
+              this.publicList[element.frequency] = [];
+            }
+            // this.publicList[element.frequency].push(element);
+            if ((parseInt(bookone.date.split('-')[1], 10) === month && element.frequency === 'month') || element.frequency === 'year') {
+              this.publicList[element.frequency].push(element); // 年开支和当月开支
             }
           }
         });
       });
+      this.expenditure = this.expenditure.toFixed(2);
+      this.expenditureToday = this.expenditureToday.toFixed(2);
+      this.expenditureMonth = this.expenditureMonth.toFixed(2);
     },
     onPrevClick() {
       // left
@@ -184,6 +205,12 @@ export default {
   flex-direction: column;
   flex: 1;
   position: relative;
+  .popShow {
+    top: 26px;
+    right: 10%;
+    font-size: 24px;
+    cursor: pointer;
+  }
   .arrow {
     top: 30px;
     width: 40px;
@@ -214,7 +241,7 @@ export default {
     flex-direction: column;
     flex: 1;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 10px;
     .top {
       width: 100%;
       height: 30px;
@@ -233,7 +260,7 @@ export default {
       flex-direction: column;
       flex: 1;
       .public {
-        margin-top: 20px;
+        margin-top: 10px;
         padding: 10px;
         width: 100%;
         display: flex;
@@ -241,9 +268,22 @@ export default {
         border: solid 1px #ddd;
         .title {
           display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: center;
           font-size: 24px;
           font-weight: bold;
           padding-bottom: 10px;
+          span {
+            line-height: 32px;
+            font-size: 14px;
+            font-weight: 100;
+            height: 100%;
+            color:#666;
+            b {
+              color:#f00;
+            }
+          }
         }
         .list {
           width: 100%;
@@ -275,7 +315,7 @@ export default {
         }
       }
       .private {
-        margin-top: 20px;
+        margin-top: 10px;
         padding: 10px;
         width: 100%;
         display: flex;
