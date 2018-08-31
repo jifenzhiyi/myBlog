@@ -18,12 +18,7 @@ const debounce = (func, wait, immediate) => {
   };
 };
 
-const randomBetween = (minValue, maxValue, precision) => {
-  if (typeof precision === 'undefined') {
-    precision = 2;
-  }
-  return parseFloat(Math.min(minValue + (Math.random() * (maxValue - minValue)), maxValue).toFixed(precision));
-};
+const randomBetween = (minValue, maxValue, precision = 2) => parseFloat(Math.min(minValue + (Math.random() * (maxValue - minValue)), maxValue).toFixed(precision));
 
 let winsize = {
   width: window.innerWidth,
@@ -182,7 +177,11 @@ class Word {
         for (let i = 0, len = this.letters.length; i <= len - 1; i += 1) {
           this.letters[i].DOM.el.style.opacity = action === 'show' ? 1 : 0;
         }
-        resolve();
+        try {
+          resolve();
+        } catch (e) {
+          reject();
+        }
       };
 
       if (config && Object.keys(config).length !== 0) {
@@ -276,12 +275,12 @@ const effects = [
     hide: {
       lettersAnimationOpts: {
         duration: 300,
-        delay: (t, i, total) => i * 25,
+        delay: (t, i) => i * 25,
         easing: 'easeOutQuad',
         opacity: {
           value: 0,
           duration: 100,
-          delay: (t, i, total) => i * 25,
+          delay: (t, i) => i * 25,
           easing: 'linear',
         },
         translateY: ['0%', '-50%'],
@@ -290,8 +289,8 @@ const effects = [
         duration: 300,
         delay: (t, i) => i * 20,
         easing: 'easeOutExpo',
-        translateX: t => anime.random(-10, 10),
-        translateY: t => -1 * anime.random(400, 800),
+        translateX: () => anime.random(-10, 10),
+        translateY: () => -1 * anime.random(400, 800),
         scale: [0.3, 0.3],
         opacity: [{
           value: 1,
@@ -825,6 +824,8 @@ export const bannerLoad = () => {
         window.slideshow.show('prev', true);
       } else if (window.store.state.Index.tindex === 3) {
         window.store.commit('SET_PRODUCT_INDEX', 'prev');
+      } else if (window.store.state.Index.tindex === 5) {
+        // console.log('prev');
       }
     } else if (keyCode === 38) {
       // 上
@@ -837,6 +838,8 @@ export const bannerLoad = () => {
         window.slideshow.show('next', true);
       } else if (window.store.state.Index.tindex === 3) {
         window.store.commit('SET_PRODUCT_INDEX', 'next');
+      } else if (window.store.state.Index.tindex === 5) {
+        // console.log('next');
       }
     } else if (keyCode === 40) {
       // 下
@@ -875,6 +878,7 @@ export const bannerLoad = () => {
     } else if (keyCode === 17) {
       // 左 Ctrl
       if (window.human) {
+        window.store.commit('SET_MODEL_TIPS', '放烟火啦，亮闪闪的烟花~<br>漂亮吗？');
         window.human = null;
         help.autoClick();
         help.setCanvasSize();

@@ -1,34 +1,67 @@
 [
   {
+    "date": "2018-8-31",
+    "items": [
+      {
+        "date": "12:45",
+        "money": -21,
+        "type": "餐饮",
+        "desc": "沙县小吃 雪菜肉丝面 鸡腿",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "12:00",
+        "money": -8,
+        "type": "手机APP",
+        "desc": "饿了吗 会员",
+        "frequency": "month",
+        "payType": "支付宝"
+      },
+      {
+        "date": "9:43",
+        "money": -4.5,
+        "type": "零食",
+        "desc": "饿了吗 零食货柜",
+        "frequency": "one",
+        "payType": "微信"
+      }
+    ]
+  },
+  {
     "date": "2018-8-30",
     "items": [
       {
-        "date": "20: 00",
-        "money": -2000,
+        "date": "20:00",
+        "money": -2004,
         "type": "爱车",
         "desc": "平安车险",
-        "frequency": "year"
+        "frequency": "year",
+        "payType": "微信"
       },
       {
-        "date": "12: 32",
+        "date": "12:32",
         "money": -16,
         "type": "餐饮",
         "desc": "菜饭 小炒肉 卤蛋",
-        "frequency": "one"
+        "frequency": "one",
+        "payType": "支付宝"
       },
       {
-        "date": "12: 00",
-        "money": 100,
-        "type": "测试",
-        "desc": "测试",
-        "frequency": "one"
-      },
-      {
-        "date": "11: 54",
+        "date": "11:54",
         "money": -211,
         "type": "爱车",
         "desc": "公司9月停车费",
-        "frequency": "month"
+        "frequency": "month",
+        "payType": "支付宝"
+      },
+      {
+        "date": "9:29",
+        "money": -5,
+        "type": "餐饮",
+        "desc": "全家早餐 大肉包",
+        "frequency": "one",
+        "payType": "微信"
       }
     ]
   },
@@ -36,18 +69,115 @@
     "date": "2018-8-29",
     "items": [
       {
-        "date": "12: 27",
+        "date": "20:02",
+        "money": -15,
+        "type": "手机APP",
+        "desc": "腾讯视频会员",
+        "frequency": "month",
+        "payType": "微信"
+      },
+      {
+        "date": "12:27",
         "money": -16,
         "type": "餐饮",
         "desc": "沙县 小馄饨 蒸饺",
-        "frequency": "one"
+        "frequency": "one",
+        "payType": "支付宝"
       },
       {
-        "date": "12: 00",
-        "money": -100,
-        "type": "test",
-        "desc": "test",
-        "frequency": "year"
+        "date": "9:27",
+        "money": -10,
+        "type": "餐饮",
+        "desc": "全家早餐 10元套餐",
+        "frequency": "one",
+        "payType": "微信"
+      },
+      {
+        "date": "7:44",
+        "money": -25,
+        "type": "手机APP",
+        "desc": "游戏充值 宠物小精灵",
+        "frequency": "one",
+        "payType": "微信"
+      }
+    ]
+  },
+  {
+    "date": "2018-8-28",
+    "items": [
+      {
+        "date": "20:08",
+        "money": -295,
+        "type": "教育",
+        "desc": "书包",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "16:19",
+        "money": -4.5,
+        "type": "餐饮",
+        "desc": "全家 可爱多",
+        "frequency": "one",
+        "payType": "微信"
+      },
+      {
+        "date": "16:04",
+        "money": -2.8,
+        "type": "零食",
+        "desc": "饿了吗 零食货柜",
+        "frequency": "one",
+        "payType": "微信"
+      },
+      {
+        "date": "12:17",
+        "money": -18,
+        "type": "餐饮",
+        "desc": "沙县小吃",
+        "frequency": "one",
+        "payType": "支付宝"
+      }
+    ]
+  },
+  {
+    "date": "2018-8-27",
+    "items": [
+      {
+        "date": "17:36",
+        "money": -400,
+        "type": "娱乐",
+        "desc": "switch游戏卡 马里奥赛车 方向盘",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "12:17",
+        "money": -17,
+        "type": "餐饮",
+        "desc": "菜饭",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "9:27",
+        "money": -5,
+        "type": "餐饮",
+        "desc": "全家早餐 大肉包",
+        "frequency": "one",
+        "payType": "微信"
+      }
+    ]
+  },
+  {
+    "date": "2018-8-26",
+    "items": [
+      {
+        "date": "22:01",
+        "money": -225,
+        "type": "宠物",
+        "desc": "预防针 8联和狂犬",
+        "frequency": "one",
+        "payType": "支付宝"
       }
     ]
   },
@@ -71,6 +201,18 @@
         "money": -350,
         "type": "爱车",
         "desc": "公司7月停车费",
+        "frequency": "month"
+      }
+    ]
+  },
+  {
+    "date": "2018-5-11",
+    "items": [
+      {
+        "date": "12: 00",
+        "money": -350,
+        "type": "爱车",
+        "desc": "公司6月停车费",
         "frequency": "month"
       }
     ]

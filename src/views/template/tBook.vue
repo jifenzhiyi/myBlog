@@ -18,41 +18,51 @@
             @click="onNextClick"/>
           <h5 v-html="getDate"/>
           <div class="book-main">
-            <div class="top"><span>本月总支出:{{ expenditure }}元</span><span>本月总收入:+{{ income }}元</span></div>
+            <div class="top"><span>总支出:{{ expenditure }}元</span><span>总收入:+{{ income }}元</span></div>
             <div
               class="bottom"
               v-if="bookList[listIndex]">
               <div
                 class="public"
-                v-if="publicList && publicList.year">
+                v-if="isShow && publicList && publicList.year">
                 <div class="title">年开支</div>
                 <div class="list clearfix">
-                  <span
+                  <div
+                    class="one"
                     v-for="(item, index) in publicList.year"
-                    :key="index">{{ index + 1 }}.{{ item.desc }} {{ item.money }}元</span>
+                    :key="index">
+                    <span class="s1 ellipsis">{{ index + 1 }}.{{ item.desc }}</span>
+                    <span class="s2">{{ item.money }}元</span>
+                  </div>
                 </div>
               </div>
               <div
                 class="public"
-                v-if="publicList && publicList.month">
+                v-if="isShow && publicList && publicList.month">
                 <div class="title">月开支</div>
-                <div class="list clearfix">
-                  <span
+                <div class="list">
+                  <div
+                    class="one"
                     v-for="(item, index) in publicList.month"
-                    :key="index">{{ index + 1 }}.{{ item.desc }} {{ item.money }}元</span>
+                    :key="index">
+                    <span class="s1 ellipsis">{{ index + 1 }}.{{ item.desc }}</span>
+                    <span class="s2">{{ item.money }}元</span>
+                  </div>
                 </div>
               </div>
-              <div class="private">
-                <div class="title">当天记录</div>
+              <div
+                class="private"
+                v-if="bookList[listIndex].items">
+                <div class="title">当天记录<span>当天共支出: <b>{{ expenditureToday }}</b> 元</span></div>
                 <div class="list">
-                  <span>1.20:00 -2000元 平安车险</span>
-                  <span>2.12:32 -16元 菜饭 小炒肉 卤蛋</span>
-                  <span>3.12:00 +100元 测试</span>
-                  <span>4.11:54 -211元 公司9月停车费 我是截至到10月11日</span>
-                  <span>5.10:00 -2000元 test</span>
-                  <span>6.9:32 -16元 test</span>
-                  <span>7.8:00 +100元 test</span>
-                  <span>8.7:54 -211元 test</span>
+                  <div
+                    class="one"
+                    v-for="(item, index) in bookList[listIndex].items"
+                    :key="index">
+                    <span class="s1 ellipsis">{{ index + 1 }}.{{ item.desc }}</span>
+                    <span class="s2">{{ item.money }}元</span>
+                    <span class="s3">消费于：{{ item.date }}</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -87,12 +97,19 @@ export default {
       bookList: [],
       publicList: {},
       listIndex: 0,
-      expenditure: 0, // 支出
-      income: 0, // 收入
+      expenditure: 0, // 总支出
+      income: 0, // 总收入
+      expenditureToday: 0, // 当天总支出
+      isShow: true,
     };
   },
   created() {
     this.bookAjax();
+    if (window.innerHeight <= 700) this.isShow = false;
+    window.addEventListener('resize', () => {
+      this.isShow = true;
+      if (window.innerHeight <= 700) this.isShow = false;
+    });
   },
   methods: {
     async bookAjax() {
@@ -100,25 +117,35 @@ export default {
       this.bookList = res.data;
       this.listLoad();
     },
-    listLoad() {
+    clearInfo() {
       this.expenditure = 0;
+      this.expenditureToday = 0;
       this.income = 0;
       this.publicList = {};
-      this.bookList[this.listIndex].items.forEach((element) => {
-        if (element.money < 0) {
-          this.expenditure += element.money;
-        }
-        if (element.money > 0) {
-          this.income += element.money;
-        }
+    },
+    listLoad() {
+      this.clearInfo();
+      this.bookList.forEach((bookone, index) => {
+        bookone.items.forEach((element) => {
+          if (element.money < 0) {
+            this.expenditure += element.money;
+            if (index === this.listIndex) {
+              this.expenditureToday += element.money;
+            }
+          }
+          if (element.money > 0) {
+            this.income += element.money;
+          }
+        });
       });
-      const month = new Date().getMonth() + 1;
+      const month = parseInt(this.bookList[this.listIndex].date.split('-')[1], 10);
       this.bookList.forEach((list) => {
         list.items.forEach((one) => {
           if (one.frequency !== 'one') {
             if (!this.publicList[one.frequency]) {
               this.publicList[one.frequency] = [];
             }
+            // this.publicList[one.frequency].push(one);
             if ((parseInt(list.date.split('-')[1], 10) === month && one.frequency === 'month') || one.frequency === 'year') {
               this.publicList[one.frequency].push(one);
             }
@@ -217,15 +244,33 @@ export default {
           font-size: 24px;
           font-weight: bold;
           padding-bottom: 10px;
-
         }
         .list {
           width: 100%;
-          span {
-            float: left;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          max-height: 62px;
+          overflow-x: hidden;
+          overflow-y: auto;
+          .one {
             width: 50%;
-            height: 30px;
-            line-height: 30px;
+            padding-top: 10px;
+            display: flex;
+            span {
+              &.s1 {
+                flex: 1,
+              }
+              &.s2 {
+                width: 30%;
+                text-align: right;
+              }
+            }
+          }
+          .one:nth-child(2n) {
+            span.s1 {
+              text-indent: 1em;
+            }
           }
         }
       }
@@ -241,17 +286,45 @@ export default {
           font-size: 24px;
           font-weight: bold;
           padding-bottom: 10px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: center;
+          height: 42px;
+          span {
+            line-height: 32px;
+            font-size: 14px;
+            font-weight: 100;
+            height: 100%;
+            color:#666;
+            b {
+              color:#f00;
+            }
+          }
         }
         .list {
           width: 100%;
-          display: flex;
-          flex-direction: column;
           overflow-x: hidden;
           overflow-y: auto;
           line-height: 20px;
-          span {
+          .one {
             padding-top: 10px;
             width: 100%;
+            display: flex;
+            span {
+              &.s1 {
+                flex: 1,
+              }
+              &.s2 {
+                width: 25%;
+                text-align: right;
+              }
+              &.s3 {
+                width: 25%;
+                text-align: right;
+                color:#666;
+              }
+            }
           }
         }
       }

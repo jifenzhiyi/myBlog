@@ -37,6 +37,7 @@ export default {
   padding: 40px;
   background:#fff;
   color:#000;
+  flex: 1;
   line-height: 1.35;
   counter-reset: section;
   h5 {

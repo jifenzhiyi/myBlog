@@ -71,7 +71,7 @@ export default {
       }
     },
     changeMusic() {
-      console.log('changeMusic');
+      // console.log('changeMusic');
       window.store.commit('SET_MUSIC_INDEX');
       help.getMusicList();
     },
