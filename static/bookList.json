@@ -1,5 +1,129 @@
 [
   {
+    "date": "2018-9-4",
+    "items": [
+      {
+        "date": "12:29",
+        "money": -20,
+        "type": "餐饮",
+        "desc": "沙县小吃",
+        "frequency": "one",
+        "payType": "支付宝"
+      }
+    ]
+  },
+  {
+    "date": "2018-9-3",
+    "items": [
+      {
+        "date": "20:39",
+        "money": -23.7,
+        "type": "餐饮",
+        "desc": "一芳台湾水果茶",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "20:29",
+        "money": -23.4,
+        "type": "餐饮",
+        "desc": "串意十足烧烤店 外卖",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "12:29",
+        "money": -17,
+        "type": "餐饮",
+        "desc": "黄山菜饭",
+        "frequency": "one",
+        "payType": "支付宝"
+      }
+    ]
+  },
+  {
+    "date": "2018-9-2",
+    "items": [
+      {
+        "date": "15:35",
+        "money": -73,
+        "type": "餐饮",
+        "desc": "查厘士",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "15:28",
+        "money": -50,
+        "type": "娱乐",
+        "desc": "乐摇摇 抓娃娃机器充值",
+        "frequency": "one",
+        "payType": "微信"
+      }
+    ]
+  },
+  {
+    "date": "2018-9-1",
+    "items": [
+      {
+        "date": "20:33",
+        "money": -27.8,
+        "type": "餐饮",
+        "desc": "一芳台湾水果茶",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "15:44",
+        "money": -96,
+        "type": "娱乐",
+        "desc": "游泳",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "15:13",
+        "money": -24.9,
+        "type": "服饰",
+        "desc": "游泳眼镜",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "13:18",
+        "money": -1700,
+        "type": "教育",
+        "desc": "175学校 拉丁舞课程",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "11:31",
+        "money": -42.7,
+        "type": "餐饮",
+        "desc": "伊秀寿司 外卖",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "11:17",
+        "money": -60,
+        "type": "服饰",
+        "desc": "140 舞蹈衣 绿色",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "10:41",
+        "money": -2,
+        "type": "交通",
+        "desc": "747公交车",
+        "frequency": "one",
+        "payType": "微信"
+      }
+    ]
+  },
+  {
     "date": "2018-8-31",
     "items": [
       {
