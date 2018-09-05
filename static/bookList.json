@@ -1,7 +1,36 @@
 [
   {
+    "date": "2018-9-5",
+    "items": [
+      {
+        "date": "16:09",
+        "money": 6485,
+        "type": "工资",
+        "desc": "招商银行 工资卡 一部分工资",
+        "frequency": "one",
+        "payType": "招商银行"
+      },
+      {
+        "date": "12:25",
+        "money": -20,
+        "type": "餐饮",
+        "desc": "黄山菜饭",
+        "frequency": "one",
+        "payType": "支付宝"
+      }
+    ]
+  },
+  {
     "date": "2018-9-4",
     "items": [
+      {
+        "date": "22:44",
+        "money": -1000,
+        "type": "转账",
+        "desc": "支付宝转账",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
       {
         "date": "12:29",
         "money": -20,

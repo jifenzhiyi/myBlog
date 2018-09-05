@@ -13,6 +13,7 @@
           <h5>My Name is 吕寅 nickname Yin</h5>
           <h6>个人信息</h6>
           <p>男 1986年 上海</p>
+          <p>If you find this project useful, you can buy me a cup of coffee</p>
         </div>
       </div>
     </div>
@@ -48,6 +49,9 @@ export default {
     font-size:2em;
     font-weight: 100;
     padding: 1.2em 0 0.6em;
+  }
+  p {
+    line-height: 2;
   }
 }
 h2:after {
