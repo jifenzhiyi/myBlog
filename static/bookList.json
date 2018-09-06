@@ -1,5 +1,18 @@
 [
   {
+    "date": "2018-9-6",
+    "items": [
+      {
+        "date": "12:38",
+        "money": -20,
+        "type": "餐饮",
+        "desc": "沙县小吃",
+        "frequency": "one",
+        "payType": "支付宝"
+      }
+    ]
+  },
+  {
     "date": "2018-9-5",
     "items": [
       {

@@ -36,8 +36,8 @@ const rootStore = new Vuex.Store({
       {
         type: 'iPhone',
         img: '/static/apple-touch-icon-next.png',
-        title: '项目标题 111',
-        intro: '<p>项目介绍 111: </p><p>使用Vue的脚手架搭建的移动端页面，利用了Vuex实现状态的管理，路由器实现页面的切换，还利用Html5的本地存储服务存储收藏的歌曲。（瞎编的）</p>',
+        title: '微信小程序',
+        intro: '<p>项目介绍: </p><p>使用mpvue框架的移动端页面，mpvue 作为一个前端开发框架，提供了一整套解决方案。</p>',
         url: 'http://www.baidu.com',
       },
       {
