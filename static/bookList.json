@@ -1,5 +1,68 @@
 [
   {
+    "date": "2018-9-14",
+    "items": [
+      {
+        "date": "12:40",
+        "money": -20,
+        "type": "餐饮",
+        "desc": "沙县小吃",
+        "frequency": "one",
+        "payType": "支付宝"
+      }
+    ]
+  },
+  {
+    "date": "2018-9-13",
+    "items": [
+      {
+        "date": "18:40",
+        "money": -200,
+        "type": "爱车",
+        "desc": "油费",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "12:40",
+        "money": -16.9,
+        "type": "餐饮",
+        "desc": "重庆小面",
+        "frequency": "one",
+        "payType": "支付宝"
+      }
+    ]
+  },
+  {
+    "date": "2018-9-12",
+    "items": [
+      {
+        "date": "20:53",
+        "money": -45.8,
+        "type": "医疗",
+        "desc": "海王星辰健康药房 饿了吗 外卖",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "12:28",
+        "money": -17,
+        "type": "餐饮",
+        "desc": "黄山菜饭",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "9:27",
+        "money": -4.5,
+        "type": "零食",
+        "desc": "饿了吗 零食货柜",
+        "frequency": "one",
+        "payType": "支付宝"
+      }
+    ]
+  },
+  {
     "date": "2018-9-11",
     "items": [
       {
@@ -245,6 +308,14 @@
         "payType": "支付宝"
       },
       {
+        "date": "20:20",
+        "money": -453,
+        "type": "餐饮",
+        "desc": "捞王",
+        "frequency": "one",
+        "payType": "招商银行"
+      },
+      {
         "date": "15:44",
         "money": -96,
         "type": "娱乐",
@@ -297,6 +368,22 @@
   {
     "date": "2018-8-31",
     "items": [
+      {
+        "date": "20:49",
+        "money": -37.3,
+        "type": "餐饮",
+        "desc": "一芳台湾水果茶",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "20:48",
+        "money": -29.4,
+        "type": "餐饮",
+        "desc": "川香麻辣香锅",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
       {
         "date": "14:11",
         "money": -8,
@@ -850,6 +937,22 @@
         "payType": "招商银行"
       },
       {
+        "date": "10:21",
+        "money": -7500,
+        "type": "取款",
+        "desc": "招商银行信用卡 提现",
+        "frequency": "one",
+        "payType": "招商银行"
+      },
+      {
+        "date": "10:21",
+        "money": -75,
+        "type": "取款",
+        "desc": "招商银行信用卡 提现 手续费",
+        "frequency": "one",
+        "payType": "招商银行"
+      },
+      {
         "date": "10:22",
         "money": -520,
         "type": "红包",
@@ -1279,10 +1382,100 @@
     ]
   },
   {
+    "date": "2018-7-7",
+    "items": [
+      {
+        "date": "12:26",
+        "money": -20,
+        "type": "交通",
+        "desc": "公交车",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "19:01",
+        "money": 5000,
+        "type": "交通",
+        "desc": "公交车",
+        "frequency": "one",
+        "payType": "微信"
+      }
+    ]
+  },
+  {
+    "date": "2018-7-7",
+    "items": [
+      {
+        "date": "19:01",
+        "money": -2,
+        "type": "交通",
+        "desc": "公交车",
+        "frequency": "one",
+        "payType": "微信"
+      },
+      {
+        "date": "18:21",
+        "money": -2440,
+        "type": "教育",
+        "desc": "175学校 游泳课程",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "18:21",
+        "money": -3000,
+        "type": "教育",
+        "desc": "175学校 游泳课程",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "14:39",
+        "money": -9,
+        "type": "其它",
+        "desc": "忘记了",
+        "frequency": "one",
+        "payType": "招商银行 信用卡"
+      },
+      {
+        "date": "14:28",
+        "money": -298,
+        "type": "餐饮",
+        "desc": "新旺茶餐厅",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "12:39",
+        "money": -500,
+        "type": "转账",
+        "desc": "支付宝转账",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "10:06",
+        "money": -379,
+        "type": "其它",
+        "desc": "网络购物",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "9:48",
+        "money": -8.5,
+        "type": "餐饮",
+        "desc": "巴比馒头",
+        "frequency": "one",
+        "payType": "微信"
+      }
+    ]
+  },
+  {
     "date": "2018-6-26",
     "items": [
       {
-        "date": "12: 00",
+        "date": "12:00",
         "money": -350,
         "type": "爱车",
         "desc": "公司7月停车费",
@@ -1295,7 +1488,7 @@
     "date": "2018-5-11",
     "items": [
       {
-        "date": "12: 00",
+        "date": "12:00",
         "money": -350,
         "type": "爱车",
         "desc": "公司6月停车费",

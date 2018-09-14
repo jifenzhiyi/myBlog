@@ -69,7 +69,7 @@ export default {
         {
           name: '文章',
           type: 'tArticle',
-          ico: 'fa-book',
+          ico: 'fa-file',
         },
         {
           name: '音乐',
@@ -90,6 +90,11 @@ export default {
           name: '记账',
           type: 'tBook',
           ico: 'fa-money',
+        },
+        {
+          name: '兴趣',
+          type: 'tFiction',
+          ico: 'fa-book',
         },
       ],
     };
