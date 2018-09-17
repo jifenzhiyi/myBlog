@@ -26,7 +26,9 @@
       class="abs bookInfo"
       v-if="popFlag"
       @click="closePop">
-      <div class="abs bookMain">test</div>
+      <div class="abs bookMain">
+        123
+      </div>
     </div>
   </div>
 </template>
