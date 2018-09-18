@@ -2,8 +2,13 @@
   "env": {
     "browser": true
   },
-  "extends": ["plugin:vue/strongly-recommended", "airbnb-base"],
-  "plugins": ["vue"],
+  "extends": [
+    "plugin:vue/strongly-recommended",
+    "airbnb-base"
+  ],
+  "plugins": [
+    "vue"
+  ],
   "parserOptions": {
     "parser": "babel-eslint"
   },
@@ -22,8 +27,13 @@
     "vue/require-valid-default-prop": 0,
     "import/no-named-as-default-member": 0,
     "camelcase": 1,
-    "prefer-promise-reject-errors": 0,
-    "no-unused-vars": 1,
-    "linebreak-style": [0, "error", "windows"]
+    "object-curly-newline": 1,
+    "prefer-promise-reject-errors": 1,
+    "vue/max-attributes-per-line": 1,
+    "linebreak-style": [
+      0,
+      "error",
+      "windows"
+    ]
   }
 }
