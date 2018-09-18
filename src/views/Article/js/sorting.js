@@ -484,10 +484,10 @@ export const articleInit = () => {
   // 调用方法 binaryInsertSort(E2, (a, b) => b - a); // 降序
   </xmp>`);
   if (size <= 10000) {
-    console.time('二分插入排序方法运行时间 => ');
+    console.time('二分排序方法运行时间 => ');
     binaryInsertSort(E1, (a, b) => a - b);
     binaryInsertSort(E2, (a, b) => b - a);
-    console.timeEnd('二分插入排序方法运行时间 => ');
+    console.timeEnd('二分排序方法运行时间 => ');
     window.log('// 结果如下:');
     if (size < 20) {
       window.log('(func_color) E1 === ', JSON.stringify(E1), '</div>');
@@ -497,6 +497,6 @@ export const articleInit = () => {
       window.log('(func_color) E2 === ', `[${E2[0]},${E2[1]}, ...${E2[size - 1]}]`, '</div>');
     }
   } else {
-    window.log('size > 10000 二分插入排序关闭');
+    window.log('size > 10000 二分排序关闭');
   }
 };

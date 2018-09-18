@@ -3,7 +3,7 @@
     <div class="template_main">
       <div class="template_a">
         <a
-          class="abs fa-arrow-up"
+          class="abs button fa-arrow-up"
           @click="setTindex(1)"/>
       </div>
       <h2 :data-title="musicTypeList[musicIndex].title"><span>{{ musicTypeList[musicIndex].title }}</span></h2>

@@ -2,7 +2,7 @@
   <div class="abs template_body">
     <div class="list_main clearfix">
       <div
-        v-for="(item,index) in articleList"
+        v-for="(item,index) in getArticleList"
         :key="index"
         class="content-box"
         @mouseover="showTips(item.title)"

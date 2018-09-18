@@ -888,6 +888,9 @@ export const bannerLoad = () => {
       // 数字键 8
       window.store.commit('SET_MUSIC_INDEX');
       help.getMusicList();
+    } else if (keyCode === 13) {
+      // 回车
+      console.log('回车');
     }
   });
 };

@@ -6,10 +6,14 @@ export default {
     ...mapState({
       tindex: state => state.Index.tindex,
       articleList: state => state.Index.articleList,
+      articleListNew: state => state.Index.articleListNew,
       musicList: state => state.Index.musicList,
       articleMode: state => state.Index.articleMode,
       articleUrl: state => state.Index.articleUrl,
     }),
+    getArticleList() {
+      return this.articleListNew && this.articleListNew.length > 0 ? this.articleListNew : this.articleList;
+    },
   },
   methods: {
     setTindex(index) {

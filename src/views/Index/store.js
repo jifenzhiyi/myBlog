@@ -60,14 +60,8 @@ export default {
         type: 'javascript',
         date: '2018-7-23',
       },
-      {
-        title: 'anime.js',
-        banner: 'static/bg4.jpg',
-        url: 'jsAnime',
-        type: 'javascript',
-        date: '2018-6-15',
-      },
     ],
+    articleListNew: [],
     musicList: null,
     articleMode: 'view1',
     articleUrl: '',
@@ -76,6 +70,9 @@ export default {
   },
   mutations: {
     /* eslint-disable no-param-reassign */
+    SET_ARTICLELIST(state, params) {
+      state.articleListNew = params;
+    },
     SET_BG_INDEX(state) {
       state.bgIndex += 1;
       if (state.bgIndex === 5) {

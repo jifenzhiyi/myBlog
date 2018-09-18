@@ -8,7 +8,7 @@
       <h1>This is My Site</h1>
       <p> Whatever is worth doing is worth doing well <br> I'll think of you every step of the way</p>
       <a
-        class="abs fa-arrow-down"
+        class="abs button fa-arrow-down"
         @click="setTindex(1)"/>
     </div>
   </div>

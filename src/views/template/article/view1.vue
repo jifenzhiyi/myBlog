@@ -3,7 +3,7 @@
     <div class="article_main clearfix">
       <div
         class="article_one"
-        v-for="(item,index) in articleList"
+        v-for="(item,index) in getArticleList"
         :key="index"
         @mouseover="showTips(item.title)"
         @click="gohtml(item)">

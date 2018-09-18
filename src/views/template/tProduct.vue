@@ -3,7 +3,7 @@
     <div class="template_main">
       <div class="template_a">
         <a
-          class="abs fa-arrow-up"
+          class="abs button fa-arrow-up"
           @click="setTindex(2)"/>
       </div>
       <h2><span>项目展示 📖</span></h2>

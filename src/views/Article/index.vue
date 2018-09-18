@@ -15,7 +15,6 @@
 
 <script>
 import { mapState } from 'vuex';
-import jsAnime from '@/views/Article/components/jsAnime';
 import jsSorting from '@/views/Article/components/jsSorting';
 import jsLive2d from '@/views/Article/components/jsLive2d';
 import jsSkill from '@/views/Article/components/jsSkill';
@@ -38,7 +37,6 @@ export default {
     },
   },
   components: {
-    jsAnime,
     jsSorting,
     jsLive2d,
     jsSkill,
@@ -61,7 +59,7 @@ export default {
   .blackbg {
     top: 0; left: 0; right:0; bottom:0;
     background:#000;
-    opacity: 0.5;
+    opacity: 0.8;
   }
   h1 {
     position: absolute;

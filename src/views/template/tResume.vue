@@ -3,7 +3,7 @@
     <div class="template_main">
       <div class="template_a">
         <a
-          class="abs fa-arrow-up"
+          class="abs button fa-arrow-up"
           @click="setTindex(3)"/>
       </div>
       <h2><span>个人简历 🎫</span></h2>
