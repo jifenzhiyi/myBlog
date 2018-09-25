@@ -1,7 +1,140 @@
 [
   {
+    "date": "2018-9-25",
+    "items": [
+      {
+        "date": "12:13",
+        "money": -23,
+        "type": "餐饮",
+        "desc": "沙县小吃",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "18:49",
+        "money": -4.5,
+        "type": "零食",
+        "desc": "饿了吗 零食货柜",
+        "frequency": "one",
+        "payType": "微信"
+      }
+    ]
+  },
+  {
+    "date": "2018-9-24",
+    "items": [
+      {
+        "date": "18:49",
+        "money": -225,
+        "type": "餐饮",
+        "desc": "粥星星",
+        "frequency": "one",
+        "payType": "微信"
+      },
+      {
+        "date": "14:43",
+        "money": -75,
+        "type": "娱乐",
+        "desc": "上海影城 电影半价票一张",
+        "frequency": "one",
+        "payType": "微信"
+      },
+      {
+        "date": "14:43",
+        "money": -30,
+        "type": "娱乐",
+        "desc": "全家便利 扭蛋娃娃",
+        "frequency": "one",
+        "payType": "微信"
+      }
+    ]
+  },
+  {
+    "date": "2018-9-23",
+    "items": [
+      {
+        "date": "11:35",
+        "money": -72,
+        "type": "餐饮",
+        "desc": "儿童医院",
+        "frequency": "one",
+        "payType": "支付宝"
+      }
+    ]
+  },
+  {
+    "date": "2018-9-22",
+    "items": [
+      {
+        "date": "13:10",
+        "money": -1,
+        "type": "交通",
+        "desc": "747公交车",
+        "frequency": "one",
+        "payType": "微信"
+      },
+      {
+        "date": "12:42",
+        "money": -2,
+        "type": "交通",
+        "desc": "747公交车",
+        "frequency": "one",
+        "payType": "微信"
+      },
+      {
+        "date": "12:28",
+        "money": -100,
+        "type": "手机APP",
+        "desc": "手机充值",
+        "frequency": "one",
+        "payType": "微信"
+      },
+      {
+        "date": "9:28",
+        "money": -3,
+        "type": "餐饮",
+        "desc": "早餐 肉包茶叶蛋",
+        "frequency": "one",
+        "payType": "微信"
+      },
+      {
+        "date": "9:25",
+        "money": -5.5,
+        "type": "餐饮",
+        "desc": "早餐 葱油饼",
+        "frequency": "one",
+        "payType": "微信"
+      }
+    ]
+  },
+  {
     "date": "2018-9-21",
-    "items": []
+    "items": [
+      {
+        "date": "20:42",
+        "money": -116.8,
+        "type": "餐饮",
+        "desc": "段氏龙虾",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "20:42",
+        "money": -126.8,
+        "type": "餐饮",
+        "desc": "段氏龙虾",
+        "frequency": "one",
+        "payType": "支付宝"
+      },
+      {
+        "date": "12:21",
+        "money": -21,
+        "type": "餐饮",
+        "desc": "沙县小吃",
+        "frequency": "one",
+        "payType": "支付宝"
+      }
+    ]
   },
   {
     "date": "2018-9-20",
@@ -80,7 +213,7 @@
       {
         "date": "9:30",
         "money": -4.5,
-        "type": "餐饮",
+        "type": "零食",
         "desc": "饿了吗 零食货柜",
         "frequency": "one",
         "payType": "微信"
