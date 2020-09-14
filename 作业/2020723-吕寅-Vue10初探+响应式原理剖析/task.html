@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>作业 see you next time</title>
+  <style>
+    p, a, .isBest { color: #f00; }
+    .error { border: solid 1px #f00;}
+    .btn { cursor: pointer; text-decoration: underline }
+    table { text-align: center; }
+    table th { width: 100px; }
+  </style>
+  <script src="../dist/vue.global.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div
+      v-if="!token"
+      class="form">
+      账号：<input
+        v-model="username"
+        :class="!isTrueName && 'error'"
+        placeholder="账号admin" /><br />
+      <p v-show="!isTrueName">账号为admin</p>
+      密码：<input
+        v-model="password"
+        :class="!isTruePwd && 'error'"
+        placeholder="密码123" /><br />
+      <p v-show="!isTruePwd">密码为123</p>
+      <button @click="login">登录</button>
+    </div>
+    <div v-else>
+      欢迎您的到来，管理员：{{ token }}, <a
+        @click="logout"
+        class="btn">退出</a><br /><br />
+      <table border="1">
+        <tr>
+          <th>编号</th>
+          <th>名字</th>
+          <th>语文</th>
+          <th>数学</th>
+          <th>英语</th>
+          <th>操作</th>
+        </tr>
+        <tr
+          v-for="item in student"
+          :key="item.id">
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+          <td :class="(score1Max === item.score1) && 'isBest'">{{ item.score1 }}</td>
+          <td :class="(score2Max === item.score2) && 'isBest'">{{ item.score2 }}</td>
+          <td :class="(score3Max === item.score3) && 'isBest'">{{ item.score3 }}</td>
+          <td><a @click="del(item.id)">删除</a></td>
+        </tr>
+        <tr>
+          <td colspan="2">各科总分</td>
+          <td>{{ score1Sum }}</td>
+          <td>{{ score2Sum }}</td>
+          <td>{{ score3Sum }}</td>
+          <td></td>
+        </tr>
+        <tr v-if="student.length > 0">
+          <td colspan="2">各科平均分</td>
+          <td>{{ score1Sum / student.length | 1 }}</td>
+          <td>{{ score2Sum / student.length | 1 }}</td>
+          <td>{{ score3Sum / student.length | 1 }}</td>
+          <td></td>
+        </tr>
+      </table>
+      <p>新增新学员</p>
+      <input
+        v-model="name"
+        placeholder="新学员名字" />
+      <button @click="addStudent">添加</button>
+    </div>
+  </div>
+  <script>
+    const { createApp, reactive, computed, onBeforeMount, onMounted, toRefs, watch } = Vue;
+
+    const data = reactive({
+      token: null,
+      username: '',
+      password: '',
+      isTrueName: computed(() => (data.username.trim() === 'admin' || data.username.trim() === '')),
+      isTruePwd: computed(() => (data.password.trim() === '123' || data.password.trim() === '')),
+      score1Sum: computed(() => sum('score1')),
+      score2Sum: computed(() => sum('score2')),
+      score3Sum: computed(() => sum('score3')),
+      student: [],
+      score1Max: 0,
+      score2Max: 0,
+      score3Max: 0,
+      name: '',
+    })
+    
+    function sum(param) {
+      const arr = JSON.parse(JSON.stringify(data.student.map(item => item[param])));
+      data[param + 'Max'] = Math.max(...arr);
+      return arr.reduce((num1, num2) => num1 + num2);
+    }
+
+    function getList() {
+      onBeforeMount(() => {
+        const token = window.localStorage.getItem('token');
+        token && (data.token = token);
+      })
+      onMounted(() => {
+        for (let i = 0; i < parseInt(Math.random() * 10 + 1, 10); i += 1) {
+          addStudent();
+        }
+        for (let a in data.student) {
+          if (data.student[a].score1 > data.score1Max) {
+            data.score1Max = data.student[a].score1;
+          }
+          if (data.student[a].score2 > data.score2Max) {
+            data.score2Max = data.student[a].score2;
+          }
+          if (data.student[a].score3 > data.score3Max) {
+            data.score3Max = data.student[a].score3;
+          }
+        }
+      })
+    }
+
+    function addStudent() {
+      const length = data.student.length;
+      data.student.push({
+        id: length + 1,
+        name: data.name || `学生00${length + 1}`,
+        score1: parseInt(Math.random() * 100, 10),
+        score2: parseInt(Math.random() * 100, 10),
+        score3: parseInt(Math.random() * 100, 10),
+      });
+      data.name = '';
+    }
+
+    function del(id) {
+      console.log('del id', id, 'index', id - 1);
+      /*
+      todo 这里的删除功能有点问题
+      proxy代理的数组不知道如何删除
+      直接splice页面会有报错信息
+      提示信息：Cannot convert a Symbol value to a number
+      */
+    }
+
+    const login = () => {
+      console.log('表单提交');
+      if (data.username.trim() === 'admin' && data.password.trim() === '123') {
+        data.token = 'admin';
+        window.localStorage.setItem('token', data.token);
+      } else {
+        alert('账号或者密码不正确');
+      }
+    }
+
+    const logout = () => { data.token = null };
+
+    const app = createApp({
+      setup: () => {
+        getList();
+        return { login, logout, ...toRefs(data), addStudent, del }
+      }
+    });
+    app.mount('#app');
+
+  </script>
+</body>
+</html>
