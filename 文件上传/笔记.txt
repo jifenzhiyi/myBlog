@@ -1,0 +1,11 @@
+级别1: axios.post 加个进度条
+级别2: 拖拽，粘贴上传
+级别3: 分片，断点续传，秒传 (文件的唯一标识)
+级别4: 计算md5
+  1.Webworker     new Worker(xx.js)
+  2.借鉴自fiber，时间切片 算md5，每一帧的空闲时间 requestIdleCallback
+  3.抽样hash 借鉴布隆过滤器的思想，牺牲一丢丢的准确性，换取效率
+级别5: 异步任务的并发控制（头条喜欢问的问题）
+  sendRequest(task, 4) 用队列
+级别6: 切片超时重试启动 + 限制重试次数
+级别7: 切片大小如何和网络匹配 tcp的慢启动逻辑（切片额外带上start和offset数据）        
