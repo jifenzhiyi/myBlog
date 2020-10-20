@@ -1,0 +1,48 @@
+alpha: 1
+buttonMode: false
+children: (12) [Graphics, Container, Container, Container, Container, Graphics, Container, Container, Container, Container, Graphics, Sprite]
+cursor: "crosshair"
+filterArea: null
+filters: null
+isMask: false
+isSprite: false
+name: "floorSprite"
+parent: Container {_events: Events, _eventsCount: 0, tempDisplayObjectParent: DisplayObject, transform: Transform, alpha: 1, …}
+renderable: true
+sortDirty: true
+sortableChildren: false
+tempDisplayObjectParent: null
+trackedPointers: (...)
+transform: Transform {worldTransform: Matrix, localTransform: Matrix, position: ObservablePoint, scale: ObservablePoint, pivot: ObservablePoint, …}
+visible: true
+worldAlpha: 1
+_bounds: Bounds {minX: -1, minY: -1, maxX: 987.5, maxY: 1005.9200000000001, rect: null}
+_boundsID: 168
+_boundsRect: null
+_destroyed: false
+_enabledFilters: null
+_events: Events {mousedown: EE, mousemove: EE, mouseup: EE}
+_eventsCount: 3
+_lastBoundsID: 13
+_lastSortedIndex: 0
+_localBoundsRect: null
+_mask: null
+_zIndex: 0
+angle: 0
+cacheAsBitmap: false
+height: 1006.9200000000001
+localTransform: Matrix
+mask: null
+pivot: ObservablePoint
+position: ObservablePoint
+rotation: 0
+scale: ObservablePoint
+skew: ObservablePoint
+width: 996
+worldTransform: Matrix
+worldVisible: true
+x: 0
+y: 0
+zIndex: 0
+_tempDisplayObjectParent: (...)
+__proto__: DisplayObject

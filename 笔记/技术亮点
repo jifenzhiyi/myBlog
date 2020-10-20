@@ -1,7 +1,51 @@
 1.项目的方方面面考虑
-a.项目规范 代码规范 = eslint + prettier，git规范，文件目录规范，
+a.项目规范 代码规范 = eslint + prettier，git规范，文件目录规范
+
+git规范 feat...
+
 b.项目质量 jest code review，CI/CD + 预警 (发钉钉)
 C.开发流程 (敏捷，TDD测试驱动开发) 基础的库
 D.发布部署（项目完成并测试完，如何上线）jenkins
 E.组件库 自动化部署和发布
 F.行为统计，报错统计，性能指标统计
+
+2.技术选型
+a.Vue+nuxt or react+next (ssr原理一致)
+b.小程序，APP，Node(EGG)
+c.埋点（原理+第三方），发布（gitlab,CI）,性能。。。
+d.报错sentry，报警(钉钉 or 微信 or 短信)
+e.其它基建（搭建，docker，看板，文档，权限，组件）
+
+3.项目搭建 vue+nuxt
+a.首先创建一个项目目录
+b.创建front目录 npx create-nuxt-app <项目名>
+c.创建serve目录后 npm init egg --type=simple
+d.npm install husky --save-dev
+
+// package.json
+{
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "pre-push": "npm test",
+      "...": "..."
+    }
+  }
+}
+
+e.npm install -g commitizen (git提交规范)
+  commitizen init cz-conventional-changelog --save-dev --save-exact
+
+使用git add .后输入git cz进行选择
+
+f.npm install --save svg-captcha(验证码生成) server端
+h.npm install egg-router-group egg-mongoose egg-validate --save
+i.npm install md5 jsonwebtoken --save
+j.npm install nodemailer --save
+k.npm install fs-extra --save (server)
+l.npm install --save spark-md5 (front)
+
+4.知识储备
+a.session jwt(json web token)
+b.OAuth
+c.jest
