@@ -44,6 +44,8 @@ i.npm install md5 jsonwebtoken --save
 j.npm install nodemailer --save
 k.npm install fs-extra --save (server)
 l.npm install --save spark-md5 (front)
+m.npm install marked --save (front) // markdown编辑器
+n.npm install highlight.js --save (front) // 专门做代码高亮的
 
 4.知识储备
 a.session jwt(json web token)

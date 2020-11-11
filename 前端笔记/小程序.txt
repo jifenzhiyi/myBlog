@@ -1,0 +1,9 @@
+小程序
+
+渲染原理：两个线程，一个渲染线程（布局），一个逻辑线程（JS代码）
+
+document 这是小程序的逻辑层
+openInspect() -> apps 可以打开小程序渲染层
+openVendor() 小程序的库文件，其中有反编译的功能
+
+uniapp 基于vuejs框架开发
