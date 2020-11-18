@@ -1,0 +1,31 @@
+# 网络性能优化的分析工具
+
+1.优化开发体验
+  打包构建时间
+2.优化输出质量
+  打包后代码
+    体积小
+    没有冗余代码
+
+Loader配置的范围 include
+依赖搜索目录
+环境拆分
+  webpack-merge
+代码压缩
+  css压缩
+  去掉冗余代码
+tree shaking
+  摇css
+  摇js
+
+暗号：自顶而下
+思维导图：梳理chrome lighthouse 6大核心指标的含义
+
+网站性能优化的分析工具
+## 读懂核心指标
+
+chrome lighthouse
+
+npm install lighthouse -g
+
+lighthouse https://www.kaikeba.com/ --view --emulated-form-factor=desktop
