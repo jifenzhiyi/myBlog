@@ -20,5 +20,3 @@ componentWillUpdate
 4.redux中进行异步操作正确的是？
 
 5.关于redux-thunk优劣势正确的是？
-
-6.

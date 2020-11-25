@@ -1,5 +1,3 @@
-// 日期处理
-
 // 获取当前时间方法1 格式：yyyy-MM-dd HH:mm:ss
 const dateToFormat = (date, isRegExp = true) => {
   let result = date.toLocaleString('zh', { hour12: false }).replace(/\b\d\b/g, '0$&');

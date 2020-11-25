@@ -18,14 +18,8 @@ tree shaking
   摇css
   摇js
 
-暗号：自顶而下
-思维导图：梳理chrome lighthouse 6大核心指标的含义
-
 网站性能优化的分析工具
 ## 读懂核心指标
-
 chrome lighthouse
-
 npm install lighthouse -g
-
 lighthouse https://www.kaikeba.com/ --view --emulated-form-factor=desktop
