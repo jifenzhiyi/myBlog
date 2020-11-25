@@ -1,0 +1,22 @@
+1.前端框架 React 不具备的特性 (C)
+A.数据绑定
+B.组件化
+C.指令
+D.没有生命周期钩子函数
+
+2.下面关于React说法错误的是 (D)
+A.React DOM在渲染之前会默认过滤所有传入的值
+B.React DOM在渲染过程中只会更新改变了的部分
+C.直接通过赋值更新React组件状态不会重新渲染组件，必须使用setState方法
+D.JSX是JavaScript的一种语法扩展，React的使用依赖JSX
+
+3.React16废弃的生命周期是哪几个
+componentWillMount
+componentWillReceiveProps
+componentWillUpdate
+废弃的原因，是在React16的Fiber架构中，调和过程会多次执行will周期，不再是一次执行，失去了原有的意义。
+此外，多次执行，在周期中如果有setState或dom操作，会触发多次重绘，影响性能，也会导致数据错乱
+
+4.redux中进行异步操作正确的是？
+
+5.关于redux-thunk优劣势正确的是？

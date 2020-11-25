@@ -1,0 +1,220 @@
+1.CSS样式，下面哪一个能够用于边距的单位? () C
+A.px
+B.em
+C.全部都对
+D.pt
+
+2.下述有关CSS属性position的属性值的描述，说法错误的是? () B
+A.static 没有定位，元素出现在正常的流中
+B.fixed 生成绝对定位的元素，相对于父元素进行定位
+C.absolute 生成绝对定位的元素，相对于static定位外的第一个祖先元素进行定位
+D.relative 生成相对定位的元素，相对于元素本身正常位置进行定位
+
+3.CSS中哪个属性不可以继承? () D
+A.color
+B.font-size
+C.font-family
+D.border
+
+4.下列定义的 CSS 中，哪个权重是最低的? () C
+A.#game .name span
+B.#game .name
+C.#game div.name
+D.#game div
+
+内联样式 > id 选择器 > 类选择器 = 属性选择器 = 伪类选择器 > 标签选择器 = 伪元素选择器。 
+多个选择器组合的时候，不应该简单地给这些选择器分配权值，然后相加比较大小。
+因为上面所说的优先级是不能越级的，比方说 1 个 id 选择器能顶你 n 个类选择器...所以要逐级比较，同级的就比较数量，数量多的优先级高。 
+当然，!important 的优先级最高。
+
+5. CSS 优先级顺序正确的是? ()
+A.!important > class > id > tag
+B.!important > tag > class > id
+C.!important > id > class > tag
+D.class > !important > id > tag
+
+6.层叠样式表 CSS 的英文单词全称是? () B
+A.Colorful Style Sheet
+B.Cascading Style Sheet
+C.Creative Style Sheet
+D.Computer Style Sheet
+
+7.以下全部属于块级标签的是? () B
+A.div h1 p img dl
+B.div p form ul h1
+C.div p input span img
+D.span h1 p img dl
+
+块状元素 <div> <p> <h1>...<h6> <ol> <ul> <dl> <table> <address> <blockquote> <form>
+内联元素 <a> <span> <br> <i> <em> <strong> <label> <q> <var> <cite> <code>
+内联块状元素 <img> <input>
+
+8.下列选项中，不属于CSS3新增样式选择器的是? () D
+A.empty 选择器
+B.root 选择器
+C.target 选择器
+D.ID 选择器
+
+9.关于CSS选择器，以下说法正确的是? () B
+A.每条选择器最多只能出现1个伪类
+B.:nth-child(an+b)中的n取值从0开始
+C.每条选择器最多只能出现2个伪元素
+D.A+B匹配A之后所有符合B规则的元素
+
+10.CSS中的clear的作用是什么? () A
+A.指明该元素周围不可出现浮动元素
+B.清除该元素所有样式
+C.指明该元素的父元素周围不可出现浮动元素
+D.清除该元素父元素的所有样式
+
+11.下列说法正确的是? () D
+A.visibility:hidden与display:none 两者没有本质上的区别
+B.display:hidden 不为被隐藏的对象保留其物理空间
+C.visibility:hidden 产生reflow和repaint（回流与重绘）
+D.visibility:hidden 所占据的空间位置仍然存在，仅为视觉上的完全透明
+
+12.以下哪些动画效果无法通过贝塞尔曲线cubic-bezier实现? () C
+A.ease
+B.ease-out
+C.fade-in
+D.linear
+
+13.CSS样式，下面哪一个元素能够达到最大宽度，且前后各有一个换行? () B
+A.Box Element
+B.Block Element
+C.Side Element
+D.Square Element
+
+css 进阶
+
+1.first-of-type 和 first-child 的区别不正确的是? () B
+A.first-of-type 匹配的是该类型的第一个元素，不限制是第一个子元素
+B.first-of-type 匹配的是该类型的第一个元素，必须是第一个子元素
+C.first-child 是结构上的第一个子元素
+D.firtst-of-type 匹配的元素的范围都属于同一级
+备注：
+:first-child 匹配的是某父元素的第一个子元素，可以说是结构上的第一个子元素
+:first-of-type 匹配的是某父元素下相同类型子元素中的第一个，不再限制是第一个子元素
+同样的:last-child和:last-of-type :nth-child(n) :nth-of-type(n)
+
+2.在CSS3中，以下哪个是IE浏览器(Trident内核)的私有属性前缀? () C
+A.-trident
+B.-ie
+C.-ms
+D.-webkit
+备注：
+mozilla内核(火狐)-moz
+webkit(safari,chrome) -webkit
+orera内核(opera) -o
+trident内核(IE) -ms
+
+3.使用transform: translate属性时出现闪烁现象的解决方案的是? () C
+A.-webkit-transform: translate(0, 0, 0)
+B.全部都是
+C.-webkit-backface-visibility: hidden
+D.-webkit-transform-style: preserve-3d
+备注：
+backface-visibility本意就是对设置进行转换的元素的背面在面对用户时是否可见。
+backface-visibility:<'visible'>(显示) | <'hidden'>(隐藏)
+
+4.如果要将一个元素旋转90°，可以使用CSS中的哪个属性实现? () A
+A.transform
+B.transition
+C.translate
+D.animation
+备注：
+transform 可以实现2D屏幕旋转或偏移
+transition 复合属性，可以实现一个完整的过渡效果
+  transition-property: 过渡属性(默认值为all)
+  transition-duration: 过渡持续时间(默认值为0s)
+  transiton-timing-function: 过渡函数(默认值为ease函数)
+  transition-delay: 过渡延迟时间(默认值为0s)
+translate 是 transition中的过渡属性，可以实现元素的移动
+animation 通过一个属性来实现动画
+与Transition不同的是：
+1.animation可以通过keyframe显示控制当前帧的属性值，而transition只能隐式来进行（不能指定每帧的属性值），所以相对而言animation的功能更加灵活。
+2.animation通过模拟属性值改变来实现动画，动画结束之后元素的属性没有变化；而transiton确实改变了元素的属性值，动画结束之后元素的属性发生了变化。
+
+5.关于媒介查询的使用方法正确的是? () D
+A.为了适配多屏幕，使用rem单位
+B.通常在移动端使用
+C.全部都是
+D.@meida媒体类型 and (媒体特性) { 样式规格 }
+备注：
+CSS3新增了媒体属性和使用场景(IE8-浏览器不支持)
+
+6.两个上下相邻的div,它们的CSS样式如下所示，请问他们之间的上下间隔是? () D
+.div1 {margin-bottom: 30px;}
+.div2 {margin-top: 20px;}
+A.10px;
+b.20px;
+C.50px;
+D.30px;
+备注：
+外边距重叠
+
+7.实现翻书的效果可以使用CSS3里的什么方法? () C
+A.scaleY
+B.translateY
+C.rotateY
+D.perspective(n)
+备注：
+scaleY：定义 2D 缩放转换时，改变元素的高度；定义 3D 缩放转换时，通过给定一个 Y 轴的值
+translateY：沿着 Y 轴移动元素
+rotateY：定义沿 Y 轴的 3D 旋转，可实现翻书的效果
+perspective(n)：改变3D元素是怎样查看透视图
+
+8.下面CSS3新增伪类中不正确的一个是? () B
+A.:disabled
+B.p:only-of-child => 正确的应该是 :only-of-type 与它同类型、同级的兄弟元素中的唯一一个元素
+C.p:first-of-type
+D.p:nth-child(2)
+备注：
+:disabled 是UI元素状态伪类选择器中的一种 例：所有 type="text" 的被禁用的 input 元素 =》 input[type="text"]:disabled
+:first-of-type 同类型、同级的兄弟元素中的第一个元素
+:nth-child(n) 必须是其父元素的第n个子节点的元素
+
+9.CSS3中什么功能可以实现文字或者图像的变形处理? () C
+A.rotate
+B.deform
+C.transform
+D.scale
+备注：
+transform 用来控制元素的变形
+transform rotate 旋转
+transform scale 缩放
+
+10.在CSS3中，如何使用弹性盒子的原理使元素行显示? () D
+A.-webkit-box-orient: horizonal;
+B.-webkit-box-flex: left;
+C.display: -webkit-border;
+D.display: -webkit-box; -webkit-box-orient: horizonal;
+
+11.超链接被点击访问过后，hover和active将不再起作用，下列哪种CSS属性的排列顺序能解决这个问题? ()
+A.L-V-H-A
+B.L-A-H-V
+C.H-L-V-A 
+D.A-L-H-V 
+备注：
+a:link{ }
+a:visited{ }
+a:hover{ }
+a:active{ }
+
+12.关于CSS Sprite错误的是? () C
+A.背景设置时，需要得到每一个背景单元的精确位置
+B.使用合成图片可以减少HTTP请求
+C.维护合成图片时比较方便
+D.一种网页图片应用处理方式，就是把网页中一些背景图片整合到一张图片文件中
+备注：
+CSS Sprite 精灵图
+CSS Sprites 的优点：     
+  减少图片的字节
+  减少了网页的http请求，从而大大的提高了页面的性能
+  减少命名难的问题
+CSS Sprites 的缺点：    
+  在图片合并的时候，你要把多张图片有序的合理的合并成一张图片，还要留好足够的空间，防止板块内出现不必要的背景。
+  在宽屏，高分辨率的屏幕下的自适应页面，图片如果不够宽，很容易出现背景断裂。
+  CSS Sprites在维护的时候比较麻烦，如果页面背景有少许改动，一般就要改这张合并的图片，无需改的地方最好不要动，这样避免改动更多的CSS，如果在原来的地方放不下，又只能（最好）往下加图片，这样图片的字节就增加了，还要改动CSS。
+
+

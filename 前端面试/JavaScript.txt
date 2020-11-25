@@ -1,0 +1,339 @@
+1.JavaScript中,设置浏览器兼容event事件的代码是? () A
+A.var ev = ev || window.event;
+B.var ev = event || window.event;
+C.event = event || window.event;
+D.var ev = event ? event : window.event;
+
+2.下列不属于JavaScript内置对象的是? () C
+A.Date
+B.Error
+C.window
+D.RegExp
+
+备注：js中的内置对象
+Arguments 函数参数集合
+Array 数组
+Boolean 布尔对象
+Date 日期事件
+Error 异常对象
+Function 函数构造器
+Math 数学对象
+Number 数值
+RegExp 正则表达式对象
+String 字符串对象
+以上等等都是内置对象
+
+宿主对象
+window, document, Element, form, image等等
+
+3.如何遍历下面的 my_data 对象? () D
+var my_data = {
+  a: 'Ape',
+  B: 'Banana',
+  C: 'Citronella'
+}
+
+A.foreach(my_data as key => value) {}
+B.for (var i = 0; i< my_data.length; i++) {}
+A.for (var key of my_data) {}
+D.全都不正确
+
+备注：正确遍历对象的方法
+a.Object.keys(my_data).forEach(key => console.log(key, my_data[key]))
+b.for (let i in my_data) { console.log(i, my_data[i]) }
+C.Object.getOwnPropertyNames(my_data).forEach(key => console.log(key, my_data[key]))
+D.Reflect.ownKeys(my_data).forEach(key => console.log(key, my_data[key]))
+其他：Object.entries Object.values等等
+
+4.['1','2', '3'].map(parseInt)? () D
+
+A.[0, 1, 2]
+B.[1, 2, 3]
+C.['1','2', '3']
+D.[1, NaN, NaN]
+
+5.函数的调用方式有哪些? () D
+A.作为构造函数调用
+B.作为对象方法调用
+C.通过call和apply方法调用
+D.全部都是
+
+另外还可以被直接调用
+
+6.假设DOM结构为：
+<div id="a">
+  <div id="b"></div>
+</div>
+document.getElementById('a').addEventListener('click', e => { console.log(1) })
+document.getElementById('b').addEventListener('click', e => { e.preventDefault(); console.log(2) })
+当点击#b元素之后 输出的内容是? () D
+
+A. 2
+B. 1 2
+C. 1
+D. 2 1
+
+7.以下哪些选项可以将集合A转化为数组? () C
+A.[].slice.apply(A)   slice是从已有的数组中返回选定的元素
+B.Array.from(A)       Array.from用于将两类可以把对象转换为真正的数组
+C.全部都是              
+D.[...A]              展开运算符，把A集合的元素展开后，用数组[]承载，返回新的数组。
+
+另外还有[].map.call(A, o => 0)
+
+8.以下 JavaScript 中数组数据类型的方法中，不会改变原始数据的方法是? () D
+A.splice
+B.reverse
+C.shift
+D.slice
+
+9.下面关于DOM事件描述错误的是? () D
+A.onload() 元素被载入（文档，框架或图像）
+B.onclick() 鼠标点击一个元素时触发
+C.onreset() 表单元素被重置，比如当用户按下表单重置按钮
+D.onchange() 元素在页面的位置发生改变时触发
+
+10.以下哪项不能提高DOM元素操作效率? () A
+A.使用addEventListener替代onxxx（比如onclick）进行事件绑定
+B.插入大量的DOM元素时，使用innerHTM替代逐个构建元素
+C.使用DocumentFragment替代多次appendChild操作
+D.处理列表子元素的点击事件时，使用事件代理
+
+11.以下代码的执行结果是? () A 
+var string = 'string';
+var number = 0;
+var bool = true;
+console.log(number || string);
+console.log(number && string);
+console.log(bool || number);
+console.log(bool && number);
+
+A.'string' 0 true 0
+B.'string' 'string' true 0
+C.'string' 0 true true
+D.'string' true 0 0
+
+12.以下结果里，返回true的是? () A
+A.!![]
+B.1==='1'
+C.!!''
+D.null === undefined
+
+13.JavaScript 定义 var a='40', var b=7,则执行a%b会得到? () B
+A.'5'
+B.5
+C.null
+D.undefined
+
+14.下列关于闭包描述正确的是? () D
+A.闭包不满足链式作用域结构
+B.闭包不耗内存，可以随意使用
+C.闭包变量执行后会被清除
+D.(function() {})理论上是一个闭包
+
+15.获取input节点的错误方法是? () C
+<form class="file" name="upload">
+  <input id="file" name="file" />
+</form>
+
+A.document.getElementById('file')
+B.document.getElementByTagName('file')[0]
+C.全都不对
+D.document.getElementById('file')[0]
+
+16.语句var arr=[a,b,c,d];执行后，数组arr中每项都是一个整数，下面得到其中最大的整数语句不正确的是? () B
+A.Math.max.apply(Math, arr)
+B.Math.max(arr)
+C.Math.max(arr[0], arr[1], arr[2], arr[3])
+D.Math.max.call(Math, arr[0], arr[1], arr[2], arr[3])
+
+17.下拉菜单中，用户更改表单元素Select中的值时，就会调用()事件处理程序?
+A.onFocus
+B.onMouseOver
+C.onClick
+D.onChange
+
+18.DOM, 文档对象模型，提供了树状结构的表达方法，以下描述正确的是? () D
+A.所有的comments 都是 document node               解释：comments属于注释节点
+B.不是所有的HTML elements 都是element nodes       解释：所有的HTML elements（元素节点，其实就是HTML标签）都是element
+C.Document 不是一个document node,是一种节点格式    解释：document可以说是一种节点格式，但节点树的根节点也叫document
+D.在 HTML element 内的 text内容也是text node
+
+19.[typeof null, null instanceof Object]这些类型的结果是? () B
+A.[null, false]
+B.["Object", false]
+C.other
+D.["object", true]
+
+20.以下哪些选项可以获取ID为a的DOM元素
+document.getElementById('a')
+document.querySelector('#a')
+
+21.DOM事件流不包括哪个阶段? () 
+A.事件监控阶段
+B.事件冒泡阶段
+C.事件捕获阶段
+D.处于目标阶段
+
+22.以下单次不属于 JavaScript 关键字的是? () C
+A.void
+B.with
+C.parant
+D.class
+
+23.下面哪一个不是 JavaScript 模块化规范 () C
+A.AMD
+B.CommonJS
+C.RequireJS
+D.ES Modules
+
+ES6 Modue 规范：
+    JavaScript 语言标准模块化方案，浏览器和服务器通用，模块功能主要由 export 和 import 两个命令构成。
+export 用于定义模块的对外接口，import 用于输入其他模块提供的功能。
+
+CommonJS 规范：
+    主要用于服务端的 JavaScript 模块化方案，Node.js 采用的就是这种方案，所以各种 Node.js 环境的前端构建工具都支持该规范。
+CommonJS 规范规定通过 require 命令加载其他模块，通过 module.exports 或者 exports 对外暴露接口。
+
+AMD 规范：
+    全称是 Asynchronous Modules Definition，
+    异步模块定义规范，
+    一种更主要用于浏览器端的 JavaScript 模块化方案，
+    该方案的代表实现者是 RequireJS，
+    通过 define 方法定义模块，
+    通过 require 方法加载模块。
+
+24.最后一个alert的输出结果是? () D
+var msg = 'hello';
+for (var i = 0; i< 10; i++) {
+  var mst = 'hello' + i * 2 + i;
+}
+alert(mst);
+
+A.hello27
+B.hello
+C.hello30
+D.hello189
+
+25.以下代码执行后，console的输出是? () class
+let X = 10;
+let foo = () => {
+  console.log(x);
+  let x = 20;
+  x++;
+}
+foo();
+
+A.21
+B.10
+C.抛出错误
+D.20
+
+26.如何判断一个JavaScript对象是否是Array, arr为要判断的对象，其中最准确的方法是? () A
+A.Object.prototype.toString.call(arr) === '[object Array]';
+B.arr.toString === '[object Array]';
+C.typeof(arr)
+D.arr instanceof Array
+
+27.下边代码输出结果是? () 
+var val = 'smtg';
+console.log('Value is ' + (val === 'smtg') ? 'Something' : 'Nothing');
+
+A.NaN
+B.Value is Something
+C.other
+D.Value is Nothing
+
+28.在原生 JavaScript 中，获取一个DOM节点的父节点，下面方法是正确的? () A
+A.element.parentNode
+B.element.parentNode()
+C.element.parent
+D.element.parent()
+
+29.下面运行结果正确的是? () A
+var a = /678/, b = /678/;
+console.log(a == b);
+console.log(a === b);
+
+A.false false
+B.true true
+C.other
+D.true false
+
+30.下边代码输出的结果是? () C
+var name = 'World';
+(function() {
+  if (typeof name === 'undefined') {
+    var name = 'Jack';
+    console.log('Goodbye' + name);
+  } else {
+    console.log('Hello ' + name);
+  }
+})();
+
+A.Hello World
+B.Hello Jack
+C.Goodbye Jack
+D.Hello undefined
+
+31.下列关于 JavaScript 节点操作的函数说明中，错误的是? () A
+A.neborNode.siblings 可以获取元素的同胞节点
+B.parentObj.children 只选择元素节点，（但是IE678 会包含注释节点）
+C.neborNode.previousSibling 获取已知节点的相邻的上一个节点
+D.nerbourNode.nextSibling 获取已知节点的下一个节点
+
+32.下面有关 JavaScript 中的call和apply的描述，错误的是? () B
+
+A.call和apply都属于Function.prototype的一个方法，所以每个function 实例都有call和apply属性
+B.两者传递的参数不同，call函数第一个参数都是要传入给当前对象的对象，apply不是
+C.apply传入的是一个参数数组，也就是将多个参数组合成为一个数组传入
+D.call传入的则是直接的参数列表。call方法可将一个函数的对象上下文从初始的上下文改变为由thisObj指定的新对象
+
+33.下面运行结果正确的是? () C
+var a = {}, b = Object.prototype;
+[a.prototype === b, Object.getPrototypeOf(a) === b]
+
+A.[false, false]
+B.other
+C.[false, true]
+D.[true, true]
+
+34.JavaScript 数组的方法中，哪些方法不能改变自身数组? () B
+A.sort
+B.concat
+C.splice
+D.pop
+
+35.JavaScript 操作Array的方法中不能添加元素的是? () A
+A.pop
+B.push
+C.splice
+D.unshift
+
+36.下列哪个事件不是由鼠标触发的事件? () C
+A.click
+B.mouseout
+C.keydown
+D.contextmenu
+
+37.以下jQuery方法中，实现跨域的是? () A
+A.getJSON
+B.post 
+C.load
+D.get
+
+38.下列代码得到的结果是? () C
+console.log(([]) ? true : false);
+console.log(([] == false ? true : false));
+console.log(({} == false) ? true : false);
+
+A.true false true
+b.false true true
+C.true true false
+D.true true true
+
+39.关于 JavaScript，以下选项描述错误的是? () C
+A.在原型上扩展的可枚举方法，会被for in循环出来
+B.原型链是JavaScript实现继承的一种模型
+C.通过hasOwnProperty可判断一个对象以及其原型链上是否具有指定名称的属性
+D.使用Object.defineProperty可向对象添加或者修改属性
