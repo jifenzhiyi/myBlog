@@ -1,1 +1,43 @@
-git stash
+Git学习笔记
+
+## 版本控制是什么
+
+### 概念
+
+版本控制最主要的功能就是追踪文件的变更。
+
+必要性：
+1.单人单功能开发 -- 至少需要在开发发现错误的时候快速回退到上一个正确的还原点
+2.单人多功能开发 + Bug fix -- 需要灵活的在多个功能点分支和Bug解决分支间切换
+3.多人多功能开发 -- 需要多人间同步最新工作成果
+4.多人多功能多版本多基线 -- 需要使用不同的分支和Tag标示开发版本和里程碑，
+                        并且通过配置管理员将新的Feather和Bug Fix配置到不同版本.
+                      
+基础功能
+1.检入检出控制
+2.分支合并
+3.历史记录
+
+.gitignore 声明文件 ---> 可以忽略指定的文件
+
+项目开发到一半
+git stash 执行缓存
+git stash list 查看stash哪些缓存
+git stash show -p 显示第一个存储的改动
+git stash show@{n} -p 显示其它存储的改动
+git stash apply 应用第一个存储，但不会删除缓存 // git stash apply stash@{n} 
+git stash pop 返回刚刚暂时缓存的内容并删除对应的缓存
+git stash drop stash@{n} 丢弃缓存
+git stash clear 删除所有缓存
+git restore || XXX文件 放弃某些更改
+
+分支管理
+git checkout -b XXX文
+git branch
+git branch -D XXX 删除分支
+git merge XXX
+
+ 远程库同步
+ git remote -v
+ git remote add origin git@......
+ git push --set-upstream origin master
