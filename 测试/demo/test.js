@@ -1,19 +1,16 @@
 // var twoSum = function(nums, target) {
-//   let obj = {}; // 小本本
-//   for (let i = 0; i < nums.length; i++) {
-//       const num = nums[i];
-//       if (num in obj) {
-//           return [obj[num], i]
-//       } else {
-//           obj[target - num] = i;
-//       }
-//       console.log('obj', obj);
-//   }
+//     const obj = {};
+//     for (let i = 0; i < nums.length; i++) {
+//         const num = nums[i];
+//         if (num in obj) {
+//             return [obj[num], i];
+//         } else {
+//             obj[target - num] = i;
+//         }
+//     }
 // };
-
 // const arr = [2, 7, 11, 15];
 // const target = 18;
-
 // const result = twoSum(arr, target);
 // console.log('result', result);
 
@@ -328,19 +325,19 @@
 // 爬楼梯
 // 4
 // 1,1,1,1 1,2,1 1,1,2 2,1,1, 2,2
-var climbStairs = function (n) {
-    // 方法一 动态规划
-    // let dp = new Array(n + 1);
-    // dp[0] = 1;
-    // dp[1] = 2;
-    // for (let i = 2; i <= n; i ++) {
-    //     dp[i] = dp[i - 1] + dp[i - 2];
-    // }
-    // return dp[n - 1];
-    // 方法二 斐波拉且通项公式
-    let sqrtFive = Math.sqrt(5);
-    let p = (5 + sqrtFive) / 10;
-    let q = (5 - sqrtFive) / 10;
-    let fibN = p * Math.pow((1 + sqrtFive) / 2, n) + q * Math.pow((1 - sqrtFive) / 2, n);
-    return Math.round(fibN);
-};
+// var climbStairs = function (n) {
+//     // 方法一 动态规划
+//     // let dp = new Array(n + 1);
+//     // dp[0] = 1;
+//     // dp[1] = 2;
+//     // for (let i = 2; i <= n; i ++) {
+//     //     dp[i] = dp[i - 1] + dp[i - 2];
+//     // }
+//     // return dp[n - 1];
+//     // 方法二 斐波拉且通项公式
+//     let sqrtFive = Math.sqrt(5);
+//     let p = (5 + sqrtFive) / 10;
+//     let q = (5 - sqrtFive) / 10;
+//     let fibN = p * Math.pow((1 + sqrtFive) / 2, n) + q * Math.pow((1 - sqrtFive) / 2, n);
+//     return Math.round(fibN);
+// };
