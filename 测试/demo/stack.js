@@ -1,8 +1,11 @@
 function Stack() {
   var items = []; // 使用数组存储数据
+  var min = Number.MAX_SAFE_INTEGER;
 
   // 添加元素
   this.push = (item) => {
+    if (item < min) min = item;
+    console.log('min', min);
     items.push(item);
   };
 
@@ -31,7 +34,21 @@ function Stack() {
     items = [];
   }
   
+  // 最小值
+  this.getMin = () => {
+    return min;
+  }
+  
 }
+
+const stack = new Stack();
+
+stack.push(0);
+stack.push(-1);
+stack.push(2);
+stack.push(3);
+stack.push(-3);
+stack.getMin();
 
 // // 判断字符串内的括号是否合法
 // function is_leagl_brackets(str) {

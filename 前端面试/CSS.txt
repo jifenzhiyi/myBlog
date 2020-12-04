@@ -1,3 +1,5 @@
+# css 基础
+
 1.CSS样式，下面哪一个能够用于边距的单位? () C
 A.px
 B.em
@@ -27,7 +29,7 @@ D.#game div
 因为上面所说的优先级是不能越级的，比方说 1 个 id 选择器能顶你 n 个类选择器...所以要逐级比较，同级的就比较数量，数量多的优先级高。 
 当然，!important 的优先级最高。
 
-5. CSS 优先级顺序正确的是? ()
+5. CSS 优先级顺序正确的是? () C
 A.!important > class > id > tag
 B.!important > tag > class > id
 C.!important > id > class > tag
@@ -85,7 +87,7 @@ B.Block Element
 C.Side Element
 D.Square Element
 
-css 进阶
+# css 进阶
 
 1.first-of-type 和 first-child 的区别不正确的是? () B
 A.first-of-type 匹配的是该类型的第一个元素，不限制是第一个子元素
@@ -217,4 +219,77 @@ CSS Sprites 的缺点：
   在宽屏，高分辨率的屏幕下的自适应页面，图片如果不够宽，很容易出现背景断裂。
   CSS Sprites在维护的时候比较麻烦，如果页面背景有少许改动，一般就要改这张合并的图片，无需改的地方最好不要动，这样避免改动更多的CSS，如果在原来的地方放不下，又只能（最好）往下加图片，这样图片的字节就增加了，还要改动CSS。
 
+# css 高阶
 
+1.关于Sass和Less的区别不正确的是？C
+A.插值语法不同
+B.输出配置不同
+C.变量名可以一样
+D.编译环境不一样
+
+2.下列选项中,关于canvas的描述错误的是？B
+A.可以在HTML页面中使用多个<canvas>元素 y
+B.getContext("2d")对象是内建的HTML5对象，拥有多种绘制路径，矩形，圆形，字符以及添加图像的方法
+C.canvas标签只是图形容器，必须使用脚本绘制图形 y
+D.对canvas画布,可以采用下面的代码进行画布大小的设置 y
+canvas {
+  width: 1024px;
+  height: 768px;
+  background: red;
+}
+
+3.关于预处理器正确的是？（C）
+A.增强了CSS代码的复用性
+B.能极大地提高工作效率
+C.全部都是
+D.具有很方便的UI组件模块化开发能力
+
+4.要在canvas画布中绘制出下面图形，需要利用哪个矩阵？（）
+     。。
+  。。。。
+     。。
+     。。
+     。。
+     。。
+。。。。。。。
+
+5.下列代码使用了哪个预处理器的颜色处理函数？（B）
+$color: #0982C1;
+h1 {
+  background: #color;
+}
+A.都不是
+B.Sass
+C.stylus
+D.Less
+
+6.以下属于SASS上的运算符的是？（A）
+A.布尔运算符
+B.全部都是
+C.字符串运算符
+D.列表运算符
+
+7.下面那项是定义less的变量？@
+
+8.支持@for,@each,@while的预处理器是？A
+A.Sass
+B.Less
+C.stylus
+
+9.下述有关border:none;以及border:0的区别，描述错误的是? (B)
+A.border:0表示边框为0
+B.当定义边框时，仅设置边框宽度不可以达到显示的效果
+C.当定义了border:none,即隐藏了边框的显示，实际就是边框宽度为0
+D.border:none表示边框样式无
+
+10.canvas匀速属性和用CSS设置宽高的区别错误的是？(C)
+A.绘图都是在画布上进行的
+B.画布默认宽度为300px,高为150px
+C.CSS控制的是画布的尺寸
+D.CSS控制的是容器的尺寸
+
+11.关于循环语句不正确的是？
+A.Sass和Stylus还支持for循环语句
+B.在Less中可以使用When来模拟for循环的特性
+C.Less支持for循环语句
+D.Sass中使用for循环语句需要使用@for,并且配合from和through一起使用

@@ -18,7 +18,7 @@ function Queue() {
   this.size = () => {
     return items.length;
   }
-
+ 
   // 清空栈
   this.clear = () => {
     items = [];
@@ -134,27 +134,162 @@ const queue = new Queue();
 */
 
 // 杨辉三角
-function print_yanghui1(n) {
-  const queue = new Queue();
-  queue.enqueue(1);
-  for (let i = 1; i <= n; i++) {
-    let line = '', pre = 0;
-    for(let j = i; j > 0; j--) {
-      const item = queue.dequeue(); // 1
-      line += item + ' ';
-      const value = pre + item;
-      queue.enqueue(value);
-      pre = item;
-    }
-    queue.enqueue(1);
-    console.log(line);
-  }
-}
-
+// function print_yanghui1(n) {
+//   const queue = new Queue();
+//   queue.enqueue(1);
+//   for (let i = 1; i <= n; i++) {
+//     let line = '', pre = 0;
+//     for(let j = i; j > 0; j--) {
+//       const item = queue.dequeue(); // 1
+//       const value = pre + item;
+//       queue.enqueue(value);
+//       line += item + ' ';
+//       pre = item;
+//     }
+//     queue.enqueue(1);
+//     console.log(line);
+//   }
+// }
+// function print_yanghui2(n) {
+//   const queue = new Queue();
+//   queue.enqueue(1);
+//   queue.enqueue(0);
+//   for (let i = 1; i <= n; i++) {
+//     let line = '', pre = 0, temp = '';
+//     while(temp.length < n-i+1) {
+//       temp += ' ';
+//     }
+//     while(true) {
+//       const item = queue.dequeue();
+//       if (item === 0) {
+//         queue.enqueue(1);
+//         queue.enqueue(0);
+//         break;
+//       } else {
+//         line += item + ' ';
+//         const value = item + pre;
+//         queue.enqueue(value);
+//         pre = item; 
+//       }
+//     }
+//     console.log(temp + line);
+//   }
+// }
 //     1
 //    1 1
 //   1 2 1
 //  1 3 3 1
 // 1 4 6 4 1
+// print_yanghui2(5);
 
-print_yanghui1(5)
+// 走迷宫
+// const maze_array = [
+//   [0, 0, 1, 0, 0, 0, 0],
+//   [0, 0, 1, 1, 0, 0, 0],
+//   [0, 0, 0, 0, 1, 0, 0],
+//   [0, 0, 0, 1, 1, 0, 0],
+//   [1, 0, 0, 0, 1, 0, 0],
+//   [1, 1, 1, 0, 0, 0, 0],
+//   [1, 1, 1, 0, 0, 0, 0],
+// ];
+// arr [
+//   [ 3, 2, X, 0, 0, 0, 0 ],
+//   [ 2, 1, X, X, 0, 0, 0 ],
+//   [ 1, s, 1, 2, X, 0, 0 ],
+//   [ 2, 1, 2, X, 1, 9, 0 ],
+//   [ X, 2, 3, 4, X, 8, 9 ],
+//   [ 1, X, X, 5, 6, 7, 8 ],
+//   [ 1, 1, X, 6, 7, 8, 9 ]
+// ]
+// 找出maze_array[2][1]到maze_array[3][5]之间最短的路径，如果两点不联通返回空
+// 提示：0 可通行 1 不可通行
+// const queue = new Queue();
+// const start_point = { x: 2, y: 1};
+// const end_point = { x: 3, y: 5 };
+// queue.enqueue(start_point); // 保存起始点
+// const pointArray = [start_point]; // 保存已经走过的点位
+// function calc(x, y, now) {
+//   const isExist = pointArray.find((o) => o.x === x && o.y === y);
+//   if (isExist) return;
+//   if (maze_array[x][y] === 0) {
+//     maze_array[x][y] = now + '';
+//     pointArray.push({ x, y });
+//     queue.enqueue({ x, y });
+//   } else if (maze_array[x][y] === 1) {
+//     maze_array[x][y] = 'x';
+//   }
+// }
+// // 计算迷宫路线
+// function out_maze() {
+//   const point = queue.dequeue(); // arr[2][1] 2,1
+//   if (point.x === 3 && point.y === 5) return;
+//   const start_num = parseInt(maze_array[point.x][point.y], 10);
+//   if (point.x > 0 && start_num >= 0) {
+//     const x = point.x - 1, y = point.y;
+//     calc(x, y, start_num + 1);
+//   }
+//   if (point.x < maze_array.length - 1 && start_num >= 0) {
+//     const x = point.x + 1, y = point.y;
+//     calc(x, y, start_num + 1);
+//   }
+//   if (point.y > 0 && start_num >= 0) {
+//     const x = point.x, y = point.y - 1;
+//     calc(x, y, start_num + 1);
+//   }
+//   if (point.y < maze_array[0].length - 1 && start_num >= 0) {
+//     const x = point.x, y = point.y + 1;
+//     calc(x, y, start_num + 1);
+//   }
+//   if (maze_array[point.x][point.y] === 0) maze_array[point.x][point.y] = 'S'; // 将初始点设置为S
+//   !queue.isEmpty() && out_maze();
+// }
+// // 返回最短路径
+// const routeArr = [];
+// function route_list() {
+//   if (maze_array[3][5] === 0) return []; // 如果点位是0，说明没有走到。路径不通
+//   queue.clear();
+//   queue.enqueue(end_point);
+//   calc2();
+//   routeArr.push(start_point);
+//   return routeArr;
+// }
+// function init(x, y) {
+//   queue.enqueue({ x, y });
+//   calc2();
+// }
+// function calc2() {
+//   const p = queue.dequeue();
+//   routeArr.push({ x: p.x, y: p.y });
+//   const endPoint = parseInt(maze_array[p.x][p.y], 10);
+//   if (p.x - 1 > 0) {
+//     const now = Number(maze_array[p.x - 1][p.y]);
+//     if (now === endPoint - 1) {
+//       init(p.x - 1, p.y);
+//       return
+//     }
+//   }
+//   if (p.x + 1 < maze_array.length - 1) {
+//     const now = Number(maze_array[p.x + 1][p.y]);
+//     if (now === endPoint - 1) {
+//       init(p.x + 1, p.y);
+//       return;
+//     }
+//   }
+//   if (p.y - 1 > 0) {
+//     const now = Number(maze_array[p.x][p.y - 1]);
+//     if (now === endPoint - 1) {
+//       init(p.x, p.y - 1);
+//       return;
+//     }
+//   }
+//   if (p.y + 1 < maze_array[0].length - 1) {
+//     const now = Number(maze_array[p.x][p.y + 1]);
+//     if (now === endPoint - 1) {
+//       init(p.x, p.y + 1);
+//       return;
+//     }
+//   }
+// }
+// out_maze();
+// const result = route_list();
+// console.log('result', result);
