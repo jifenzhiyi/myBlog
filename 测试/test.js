@@ -129,12 +129,20 @@ console.log(bool && number); */
 
 // substring 字符串截取
 // console.log('hello'.substring(2))
-let pi = 3.1415926
-let hi = 'hello'
-console.log(pi.toFixed(2))
-console.log(hi.substring(2))
-console.log(hi.repeat(2))
-console.log(hi.length)
-console.log(hi.charAt(2))
-console.log(hi.substring(2)) // 记得搞清slice，substring，substr的区别
+// let pi = 3.1415926
+// let hi = 'hello'
+// console.log(pi.toFixed(2))
+// console.log(hi.substring(2))
+// console.log(hi.repeat(2))
+// console.log(hi.length)
+// console.log(hi.charAt(2))
+// console.log(hi.substring(2)) // 记得搞清slice，substring，substr的区别
 // 还有其他indexOf,inclused trim,startsWith,padStart，replace等方法
+
+const testArr = [1,2,3,4,5,6,7,8,9,10];
+
+for (let i = 0; i < testArr.length; i++) {
+  if (testArr[i] === 6) i++;
+  const item = testArr[i];
+  console.log('item', item);
+}

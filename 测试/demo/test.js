@@ -341,3 +341,47 @@
 //     let fibN = p * Math.pow((1 + sqrtFive) / 2, n) + q * Math.pow((1 - sqrtFive) / 2, n);
 //     return Math.round(fibN);
 // };
+
+// 快乐数
+// 方法一
+/*
+数字转为字符串，split成的每位，reduce相加每位的平方，求和
+快乐数连续平方求和，会变成1
+不快乐数连续平方求和，会在["4", "16", "37", "58", "89", "145", "42", "20", "4 "]中循环
+*/
+// var isHappy = function(n) {
+//   while (n = String(n).split('').reduce((p, v) => p + v * v, 0)) {
+//       if (n === 1) return true
+//       else if (n === 4) return false
+//   }
+// };
+// 方法二
+// var isHappy = function(n) {
+//   let res = sum(n)
+//   let obj = {}
+//   while(res != 1){
+//     if (res in obj) return false
+//     obj[res] = 1
+//     res = sum(res)
+//   }
+//   return true
+// }
+function sum(n){
+  n = n + ''
+  let sum = 0
+  for(let num of n){
+    sum += num * num
+  }
+  return sum
+}
+// 方法三
+var isHappy = function(n) {
+  let slow = sum(n)
+  let fast = sum(slow)
+  while(slow != fast){
+    slow = sum(slow)
+    fast = sum(sum(fast))
+  }
+  return slow == 1
+}
+console.log('isHappy', isHappy(414));
