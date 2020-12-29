@@ -366,22 +366,46 @@
 //   }
 //   return true
 // }
-function sum(n){
-  n = n + ''
-  let sum = 0
-  for(let num of n){
-    sum += num * num
-  }
-  return sum
-}
-// 方法三
-var isHappy = function(n) {
-  let slow = sum(n)
-  let fast = sum(slow)
-  while(slow != fast){
-    slow = sum(slow)
-    fast = sum(sum(fast))
-  }
-  return slow == 1
-}
-console.log('isHappy', isHappy(414));
+// function sum(n){
+//   n = n + ''
+//   let sum = 0
+//   for(let num of n){
+//     sum += num * num
+//   }
+//   return sum
+// }
+// // 方法三
+// var isHappy = function(n) {
+//   let slow = sum(n)
+//   let fast = sum(slow)
+//   while(slow != fast){
+//     slow = sum(slow)
+//     fast = sum(sum(fast))
+//   }
+//   return slow == 1
+// }
+// console.log('isHappy', isHappy(414));
+
+var generateParenthesis = function (n) {
+  let res = [];
+  //  cur :当前字符  left：当前字符左括号 right:当前字符右括号
+  const help = (cur, left, right) => {
+    if (cur.length === 2 * n) {
+      res.push(cur);
+      return;
+    }
+    if (left < n) {
+      help(cur + "(", left + 1, right)
+    }
+    if (right < left) {
+      help(cur + ")", left, right + 1);
+    }
+  };
+  help("", 0, 0);
+  return res;
+};
+
+console.log(generateParenthesis(4));
+
+// var matchRight = str.match(/\)/g);
+// if (matchRight && matchRight.length > str.length / 2) return
