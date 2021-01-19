@@ -386,26 +386,88 @@
 // }
 // console.log('isHappy', isHappy(414));
 
-var generateParenthesis = function (n) {
-  let res = [];
-  //  cur :当前字符  left：当前字符左括号 right:当前字符右括号
-  const help = (cur, left, right) => {
-    if (cur.length === 2 * n) {
-      res.push(cur);
-      return;
-    }
-    if (left < n) {
-      help(cur + "(", left + 1, right)
-    }
-    if (right < left) {
-      help(cur + ")", left, right + 1);
-    }
-  };
-  help("", 0, 0);
-  return res;
-};
+// var generateParenthesis = function (n) {
+//   let res = [];
+//   //  cur :当前字符  left：当前字符左括号 right:当前字符右括号
+//   const help = (cur, left, right) => {
+//     if (cur.length === 2 * n) {
+//       res.push(cur);
+//       return;
+//     }
+//     if (left < n) {
+//       help(cur + "(", left + 1, right)
+//     }
+//     if (right < left) {
+//       help(cur + ")", left, right + 1);
+//     }
+//   };
+//   help("", 0, 0);
+//   return res;
+// };
 
-console.log(generateParenthesis(4));
+// console.log(generateParenthesis(4));
 
 // var matchRight = str.match(/\)/g);
 // if (matchRight && matchRight.length > str.length / 2) return
+
+// var calcEquation = function(equations, values, queries) {
+//   let map = new Map(), res = [];
+//   let visit = new Map();
+//   const dfs = (src, dst) => {
+//     if (src === dst) return 1.0;
+//     let adjs = map.get(src);
+//     for (let i = 0; i < adjs.length; ++i) {
+//         let next = adjs[i];
+//         if (!visit.get(next[0])) {
+//           visit.set(next[0], true);
+//           let ret = dfs(next[0], dst);
+//           visit.set(next[0], false);
+//           if (ret !== -1.0) return next[1] * ret;
+//         }
+//     }
+//     return -1.0;
+//   };
+//   for (let i = 0; i < equations.length; ++i) {
+//     let e = equations[i], v = values[i];
+//     if (!map.has(e[0])) {
+//         map.set(e[0], []);
+//         visit.set(e[0], false);
+//     }
+//     if (!map.has[e[1]]) {
+//         map.set(e[1], []);
+//         visit.set(e[1], false);
+//     }
+//     let adj1 = map.get(e[0]);
+//     let adj2 = map.get(e[1]);
+//     adj1.push([e[1], v]);
+//     adj2.push([e[0], 1 / v]);
+//   }
+//   for (let q of queries) {
+//     let n0 = q[0], n1 = q[1];
+//     if (map.has(n0) && map.has(n1)) {
+//       visit.set(n0, true);
+//       res.push(dfs(n0, n1));
+//       visit.set(n0, false);
+//     } else {
+//         res.push(-1.0);
+//     }
+//   }
+//   return res;
+// }
+
+// a / b = 3.4 e / f = 1.4 b / e = 2.3
+// a = 3.4b e = 1.4f b = 2.3e;
+// b / a = 1 / 3.4 = ......
+// a / f = 3.4 * 2.3 * 1.4f / f = 3.4 * 2.3 * 1.4 = .....
+
+// 9 9 乘法表
+let result = '';
+for (let i = 1; i < 10; i++) {
+  for (let j = 1; j <= i; j++) {
+    let res = i * j;
+    if (res < 10) res += ' '; 
+    result += `${i} * ${j} = ${res} `;
+  }
+  result += '\r\n';
+}
+console.log(result);

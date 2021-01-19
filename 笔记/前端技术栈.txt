@@ -19,8 +19,8 @@ webpack
 UI框架
 Bootstrap ElementUI
 
-数据可视化
-Echarts
+数据可视化,2D,3D
+Echarts, PIXI, THREE
 
 CSS3 动画
 Animate.css
