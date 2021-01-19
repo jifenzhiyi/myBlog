@@ -53,7 +53,7 @@ instanceof 用于检测构造函数的prototype属性是否出现在某个实例
 也可以理解为是否为某个对象的实例。
 
 eq:  
-  typeof 不能区分数组，instanceof可以
+  typeof 不能区分数组，instanceof 可以
 
 ```
 const arr = [];
@@ -72,8 +72,8 @@ eq: 只有对象才有方法使用，但是在js中值类型也可以，因为�
 ## String
 大小写转换
 ```
-console.log('Hello World'.toUpperCase());
-console.log('Hello World'.toLowerCase());
+console.log('Hello World'.toUpperCase()); // HELLO WORLD
+console.log('Hello World'.toLowerCase()); // hello world
 ```
 
 获取单字符
@@ -111,34 +111,36 @@ includes 包含
 startsWith 是否是指定位置开始  
 endsWith 是否是指定位置结束  
 
-替换字符串
-replace
+替换字符串 replace
 
 重复生成
 ```
-function star(num = 3) {
-	return '*'.repeat(num);
-}
+const star = (num = 3) => '*'.repeat(num);
 console.log(star());
 ```
 
-类型转换
-split
+类型转换 split
 
 ## Boolean
-隐式转换
+隐式转换  
 如果使用Boolean与数值比较时，会进行隐式类型转换 true转为1，false 转为0。  
-显式转换 !!
+
+显式转换  
+!!
 
 ## Number
 NaN isNaN Object.is(2 / 'test', NaN)  
+
 浮点精度  
 console.log(0.1 + 0.2); // 结果：0.30000000000000004
-方法一 toFixed(2)  
+
+方法一  
+toFixed(2)
+
 方法二
 ```
 Number.prototype.add = function (num) {
-	// 取两个数值中小数位最大的
+  // 取两个数值中小数位最大的
   let n1 = this.toString().split('.')[1].length;
   let n2 = num.toString().split('.')[1].length;
   // 得到10的N次幂
