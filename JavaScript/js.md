@@ -279,7 +279,147 @@ keys values entries
 扩展方法  
 every some filter map reduce reduceRight
 
-# Symbol
+## Symbol
 Symbol用于防止属性名冲突而产生的，比如向第三方对象中添加属性时。  
 Symbol 的值是唯一的，独一无二的不会重复的
+```
+let aa = Symbol("test");
+let bb = Symbol("test");
+console.log(aa == bb); //false
+let cc = Symbol.for("test");
+let dd = Symbol.for("test");
+console.log(cc == dd); //true
+```
 
+## Set
+用于存储任何类型的唯一值，无论是基本类型还是对象引用。
+```
+const arr = new Set();
+arr.add('test1');
+arr.add('111');
+arr.add('111');
+console.log(arr.values()); // SetIterator {"test1", "111"}
+console.log(arr.size); // 2
+console.log(arr.has('test1')); // true
+console.log(arr.delete("111")); // true
+console.log(arr.has("111")); // false
+arr.clear(); // 清空所有元素
+// 交集
+const set1 = new Set([1, 3, 5, 7, 9]);
+const set2 = new Set([2, 3, 4, 5, 6]);
+const newSet = new Set([...set1].filter((item) => set2.has(item)));
+console.log(newSet); // Set(2) { 3, 5 }
+// 差集(在集合a中出现但是不在集合b中出现)
+const newSet2 = new Set([...set1].filter((item) => !set2.has(item)));
+console.log(newSet2); // Set(3) { 1, 7, 9 }
+// 并集
+const newSet3 = new Set([...set1, ...set2]);
+console.log(newSet3); // Set(8) { 1, 3, 5, 7, 9, 2, 4, 6 }
+```
+
+WeakSet  
+WeakSet结构同样不会存储重复的值，它的成员必须只能是对象类型的值。
+```
+const test = new WeakSet();
+const arr = ['111'];
+test.add(arr);
+console.log(test.has(arr)); // true
+test.delete(arr);
+console.log(test.has(arr)); // false
+```
+
+## Map
+Map是一组键值对的结构，用于解决以往不能用对象做为键的问题
+
+具有极快的查找速度  
+函数、对象、基本类型都可以作为键或值  
+
+```
+const map = new Map();
+const obj = { name: '张三' };
+map.set(obj, '123@123.com');
+console.log(map.entries());
+// 对于键是对象的Map， 键保存的是内存地址，值相同但内存地址不同的视为两个键。
+console.log(map.get(obj)); // 123@123.com
+console.log(map.get({ name: '张三' })); // undefined
+```
+
+# 函数进阶
+
+## 基础知识
+在JS中函数也是对象函数是Function类的创建的实例
+```
+let hd = new Function("title", "console.log(title)");
+hd('Hello World');
+// 变量提升
+console.log(test()); // test
+function test() {
+  // 会提升
+	return 'test';
+}
+var test = function () {
+  // 不会提升
+	return 'hdcms.com';
+}
+```
+arguments 是函数获得到所有参数集合  
+```
+function sum1() {
+  return [...arguments].reduce((total, num) => {
+    return (total += num);
+  }, 0);
+}
+console.log(sum1(2, 3, 4, 2, 6)); // 17
+function sum2(...args) {
+ return args.reduce((a, b) => a + b);
+}
+console.log(sum2(2, 3, 4, 2, 6)); // 17
+```
+箭头函数  
+箭头函数是函数声明的简写形式，在使用递归调用、构造函数、事件处理器时不建议使用箭头函数。
+
+标签函数
+```
+function tag(str, ...values) {
+  console.log(str); // ["", "今天买了", "苹果", raw: Array(3)]
+  console.log(values); // ["张三", 100]
+}
+let name = '张三', count = 100;
+tag `${name}今天买了${count}苹果`;
+```
+
+apply/call/bind
+```
+function User(name) {
+  this.name = name;
+  this.say = () => console.log('大家好，我的名字叫' + this.name);
+}
+let obj = {};
+User.call(obj, '张三');
+console.log(obj.name); // 张三
+obj.say();
+User.apply(obj, ['李四']);
+console.log(obj.name); // 李四
+obj.say();
+
+// 找数组中的数值最大和最小值 max min
+let arr = [1, 3, 2, 8];
+console.log(Math.max(arr)); // NaN
+console.log(Math.max(...arr)); // 8
+console.log(Math.max.apply(Math, arr)); // 8
+console.log(Math.max.call(Math, ...arr)); // 8
+```
+bind  
+bind()是将函数绑定到某个对象  
+与 call/apply 不同bind不会立即执行  
+bind 是复制函数形为会返回新函数  
+```
+let a = function() {};
+let b = a;
+console.log(a === b); // true
+// bind是新复制函数
+let c = a.bind();
+console.log(a == c); // false
+```
+
+# 作用域与闭包
