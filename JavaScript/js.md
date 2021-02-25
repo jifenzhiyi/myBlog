@@ -355,11 +355,11 @@ hd('Hello World');
 console.log(test()); // test
 function test() {
   // 会提升
-	return 'test';
+  return 'test';
 }
 var test = function () {
   // 不会提升
-	return 'hdcms.com';
+  return 'hdcms.com';
 }
 ```
 arguments 是函数获得到所有参数集合  
@@ -371,7 +371,7 @@ function sum1() {
 }
 console.log(sum1(2, 3, 4, 2, 6)); // 17
 function sum2(...args) {
- return args.reduce((a, b) => a + b);
+  return args.reduce((a, b) => a + b);
 }
 console.log(sum2(2, 3, 4, 2, 6)); // 17
 ```
@@ -423,3 +423,146 @@ console.log(a == c); // false
 ```
 
 # 作用域与闭包
+```
+function User() {
+  let age = 1;
+  this.add = function() {
+    console.log(age++);
+  }
+}
+let people = new User();
+people.add(); // 1
+people.add(); // 2
+```
+## 闭包
+闭包指子函数可以访问外部作用域变量的函数特性  
+```
+let arr = [3, 2, 4, 1, 5, 6];
+function between(a, b) {
+  return function(v) {
+    return v >= a && v <= b;
+  };
+}
+console.log(arr.filter(between(3, 5)));
+// 下例使用闭包按指定字段排序
+let lessons = [
+  {
+    title: "媒体查询响应式布局",
+    click: 89,
+    price: 12
+  },
+  {
+    title: "FLEX 弹性盒模型",
+    click: 45,
+    price: 120
+  },
+  {
+    title: "GRID 栅格系统",
+    click: 19,
+    price: 67
+  },
+  {
+    title: "盒子模型详解",
+    click: 29,
+    price: 300
+  }
+];
+function order(field) {
+  return (a, b) => (a[field] > b[field] ? 1 : -1);
+}
+console.table(lessons.sort(order("click")));
+console.table(lessons.sort(order("price")));
+```
+
+# 对象
+
+## 构建函数
+```
+// 工厂函数
+function stu(name) {
+  return {
+    name,
+    show() {
+      console.log('我是' + this.name);
+    }
+  }
+}
+const ls = stu('李四');
+ls.show(); // 我是李四
+const ww = stu('王五');
+ww.show(); // 我是王五
+// 构造函数
+function Student(name) {
+  this.name = name;
+  this.show = function() {
+    console.log(this.name);
+  }
+  // 不需要返回 系统自动返回
+  // return this;
+}
+const zs = new Student('张三');
+zs.show();
+// 如果构造函数返回对象，实例化后的对象将是此对象
+function ArrayObject(...values) {
+  const arr = new Array();
+  arr.push.apply(arr, values);
+  arr.string = function(sym = "|") {
+    return this.join(sym);
+  };
+  return arr;
+}
+const array = new ArrayObject(1, 2, 3);
+console.log(array);
+console.log(array.string("-"));
+```
+
+## 属性特征
+JS中可以对属性的访问特性进行控制。
+
+查看特征  
+使用 Object.getOwnPropertyDescriptor查看对象属性的描述。
+```
+const user = {
+  name: '张三',
+  age: 19
+};
+let desc = Object.getOwnPropertyDescriptor(user, 'name');
+console.log(JSON.stringify(desc, null, 2));
+let descs = Object.getOWnPropertyDescriptros(user);
+console.log(JSON.stringify(desc, null, 2));
+```
+
+设置特征
+```
+const user = {
+  name: '张三,
+};
+Object.defineProperty(user, 'name', {
+  value: '李四', // 对属性的默认值
+  writable: false, // 对象属性是否可修改
+  enumerable: false, // 对象属性是否可通过for-in循环,或Object.keys()读取
+  configurable: false, // 能否使用delete、能否修改属性特性或能否修改访问器属性
+});
+// definePropertys一次设置多个属性
+Object.definePropertys(user, {
+  name: { value: '', writable: false },
+  age: { value: 18 },
+});
+console.log(user);
+// 禁止向对象添加属性
+Object.preventExtensions(user);
+user.age = 18; // Error
+// 判断是否能向对象中添加属性
+console.log(Object.isExtensible(user)); // false
+// 封闭对象
+// Object.seal()方法封闭一个对象，阻止添加新属性并将所有现有属性标记为 configurable: false
+Object.seal(user);
+console.log(JSON.stringify(Object.getOwnPropertyDescriptors(user), null, 2));
+Object.isSealed(user); // 返回对象是否密封
+// 冻结对象
+Object.freeze(user);
+user.name = 'aaa'; // false
+console.log(Object.isFrozen(user)); // true
+```
+
+# 原型基础

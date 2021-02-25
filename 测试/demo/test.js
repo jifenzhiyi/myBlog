@@ -461,13 +461,93 @@
 // a / f = 3.4 * 2.3 * 1.4f / f = 3.4 * 2.3 * 1.4 = .....
 
 // 9 9 乘法表
-let result = '';
-for (let i = 1; i < 10; i++) {
-  for (let j = 1; j <= i; j++) {
-    let res = i * j;
-    if (res < 10) res += ' '; 
-    result += `${i} * ${j} = ${res} `;
-  }
-  result += '\r\n';
+// let result = '';
+// for (let i = 1; i < 10; i++) {
+//   for (let j = 1; j <= i; j++) {
+//     let res = i * j;
+//     if (res < 10) res += ' '; 
+//     result += `${i} * ${j} = ${res} `;
+//   }
+//   result += '\r\n';
+// }
+// console.log(result);
+// var maxSatisfied = function(customers, grumpy, x) {
+//   let total = 0;
+//   const n = customers.length;
+//   for (let i = 0; i < n; i++) {
+//     if (grumpy[i] === 0) {
+//       total += customers[i];
+//     }
+//   }
+//   console.log('total', total);
+//   let increase = 0;
+//   for (let i = 0; i < x; i++) {
+//     increase += customers[i] * grumpy[i];
+//   }
+//   console.log('increase', increase);
+//   let maxIncrease = increase;
+//   for (let i = x; i < n; i++) {
+//     increase = increase - customers[i - x] * grumpy[i - x] + customers[i] * grumpy[i];
+//     maxIncrease = Math.max(maxIncrease, increase);
+//   }
+//   console.log('maxIncrease', maxIncrease);
+//   return total + maxIncrease;
+// }
+// const customers = [1,0,1,2,1,1,7,5], grumpy = [0,1,0,1,0,1,0,1], x = 3;
+// maxSatisfied(customers, grumpy, x);
+
+// 绝对差不超过限制的最长连续子数组
+// 解决方案
+/*
+  可以创建一个数组来统计最大最小值 比如 [1,4,5,6,7,8,4,4,4,5] 2 .... => [ 4,4,4,5 ]
+*/
+// 普通
+// var longestSubarray = function(nums, limit) {
+//   const queMax = [];
+//   const queMin = [];
+//   const n = nums.length;
+//   let left = 0, right = 0, ret = 0;
+//   while(right < n) {
+//     while (queMax.length && queMax[queMax.length - 1] < nums[right]) {
+//       queMax.pop();
+//     }
+//     while (queMin.length && queMin[queMin.length - 1] > nums[right]) {
+//       queMin.pop();
+//     }
+//     queMax.push(nums[right]);
+//     queMin.push(nums[right]);
+//     while (queMax.length && queMin.length && queMax[0] - queMin[0] > limit) {
+//       if (nums[left] === queMin[0]) {
+//         queMin.shift();
+//       }
+//       if (nums[left] === queMax[0]) {
+//         queMax.shift();
+//       }
+//       left++;
+//     }
+//     ret = Math.max(ret, right - left + 1);
+//     right++;
+//   }
+//   return ret;
+// }
+// 进阶
+var longestSubarray = function(nums, limit) {
+  var left = 0;
+	var min = [], max = [];
+	var res = 0;
+	for (var i = 0; i < nums.length; i++) {
+		while (max.length && nums[max[max.length - 1]] <= nums[i]) max.pop();
+		max.push(i);
+		while (min.length && nums[min[min.length - 1]] >= nums[i]) min.pop();
+		min.push(i);
+		while (nums[max[0]] - nums[min[0]] > limit) {
+			left = Math.min(max[0], min[0]) + 1;
+			max[0] > min[0] ? min.shift() : max.shift();
+		}
+		res = Math.max(res, i - left + 1);
+	}
+	return res;
 }
-console.log(result);
+const nums = [8,2,4,7], limit = 4;
+const result = longestSubarray(nums, limit);
+console.log('result', result);

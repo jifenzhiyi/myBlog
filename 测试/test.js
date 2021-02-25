@@ -139,10 +139,20 @@ console.log(bool && number); */
 // console.log(hi.substring(2)) // 记得搞清slice，substring，substr的区别
 // 还有其他indexOf,inclused trim,startsWith,padStart，replace等方法
 
-const testArr = [1,2,3,4,5,6,7,8,9,10];
+// const testArr = [1,2,3,4,5,6,7,8,9,10];
 
-for (let i = 0; i < testArr.length; i++) {
-  if (testArr[i] === 6) i++;
-  const item = testArr[i];
-  console.log('item', item);
+// for (let i = 0; i < testArr.length; i++) {
+//   if (testArr[i] === 6) i++;
+//   const item = testArr[i];
+//   console.log('item', item);
+// }
+
+/*
+let max = 0;
+for(let i = 0, j = 0;j < s.length; j++){
+    let index = s.substring(i, j).indexOf(s[j]);
+    if (index !== -1) i = index + 1 + i;
+    max = Math.max(max, j - i + 1);
 }
+return max;
+*/
