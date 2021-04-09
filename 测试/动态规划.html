@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * { margin: 0; padding: 0; }
+    .wapper {
+      width: 500px;
+      height: 1000px;
+      display: flex;
+      overflow: scroll;
+      background: #ccc;
+      justify-content: space-between;
+    }
+    .ww {
+      width: 100px;
+    }
+    .w1 { background: darkcyan; }
+    .w2 { background: green; }
+    .w3 { background: burlywood; }
+    .w4 { background: yellowgreen; }
+    .one {
+      background: #f00;
+    }
+  </style>
+</head>
+<body>
+  <!--图片网站，图片宽度一样，高度不一样，4列摆放， 100张图片，怎么摆放让4列的高度差最小-->
+  <div class="wapper">
+    <div class="ww w1"></div>
+    <div class="ww w2"></div>
+    <div class="ww w3"></div>
+    <div class="ww w4"></div>
+  </div>
+  <script>
+    const imgList = [];
+    for (let i = 0; i < 20; i++) {
+      const ran = Math.random() * 500 | 1;
+      const item = [];
+      item[0] = 100;
+      item[1] = ran;
+      imgList.push(item);
+    }
+    imgList.sort((a, b) => a[1] - b[1]);
+    console.log('imgList', imgList);
+    // let html = '';
+    let l1 = '', l2 = ''
+    imgList.forEach((one, index) => {
+      // html += `<div class="one" style="width:${one[0]}px;height:${one[1]}px">图片${index + 1}</div>`
+    });
+    // document.querySelector('div').innerHTML = html;
+  </script>
+</body>
+</html>

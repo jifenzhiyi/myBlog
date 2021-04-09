@@ -37,7 +37,9 @@ git branch
 git branch -D XXX 删除分支
 git merge XXX
 
- 远程库同步
- git remote -v
- git remote add origin git@......
- git push --set-upstream origin master
+远程库同步
+git remote -v
+连接远程库
+git remote add ? git@......
+// ? === origin other
+git push --set-upstream origin master

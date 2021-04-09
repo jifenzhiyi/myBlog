@@ -293,3 +293,8 @@ const queue = new Queue();
 // out_maze();
 // const result = route_list();
 // console.log('result', result);
+
+// 3 + 2 * 2
+// [3, 2, 2] [+, *]
+// 2 * 2 + 3
+// [2, 2, 3] [+, *]

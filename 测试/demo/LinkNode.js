@@ -333,3 +333,87 @@ linkNode.print();
 
 // -1 -2 0 0 1 2
 // -5 -4 -3 -2 -1 0 1 2 3 4 5 target = 3
+
+// åß
+
+/*
+var MyLinkedList = function() {
+  this.head=null
+  this.rear=null
+  this.len=0
+};
+function ListNode(val) {
+  this.val = val;
+  this.next = null;
+}
+MyLinkedList.prototype.get = function(index) {
+  if(index<0||index>this.len-1)
+    return -1
+  var node=this.head
+  while(index-->0){
+    if(node.next==null)
+      return -1
+    node=node.next
+  }
+  return node.val
+};
+
+MyLinkedList.prototype.addAtHead = function(val) {
+  var node=new ListNode(val)
+  if(this.head==null)
+    this.rear=node
+  else
+    node.next=this.head
+  this.head=node
+  this.len++
+};
+
+MyLinkedList.prototype.addAtTail = function(val) {
+  var node=new ListNode(val)
+  if(this.head==null)
+    this.head=node
+  else
+    this.rear.next=node
+  this.rear=node
+  this.len++
+};
+
+MyLinkedList.prototype.addAtIndex = function(index, val) {
+  if(index<=0)
+    return this.addAtHead(val)
+  if(this.len<index)
+    return
+  if(index==this.len)
+    return this.addAtTail(val)
+  var node=this.head
+  while(index-->1){
+    node=node.next
+  }
+    
+  var newnode=new ListNode(val)
+  newnode.next=node.next
+  node.next=newnode
+  this.len++
+};
+
+MyLinkedList.prototype.deleteAtIndex = function(index) {
+  if(index<0||index>this.len-1||this.len==0)
+    return
+  if(index==0){
+    this.head=this.head.next
+    this.len--
+    return
+  }
+
+  var node=this.head
+  var myindex=index
+  while(index-->1){
+    node=node.next
+  }
+  if(myindex==(this.len-1)){
+    this.rear=node
+  }
+  node.next=node.next.next
+  this.len--
+};
+*/

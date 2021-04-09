@@ -1,54 +1,54 @@
-function Stack() {
-  var items = []; // 使用数组存储数据
-  var min = Number.MAX_SAFE_INTEGER;
+// function Stack() {
+//   var items = []; // 使用数组存储数据
+//   var min = Number.MAX_SAFE_INTEGER;
 
-  // 添加元素
-  this.push = (item) => {
-    if (item < min) min = item;
-    console.log('min', min);
-    items.push(item);
-  };
+//   // 添加元素
+//   this.push = (item) => {
+//     if (item < min) min = item;
+//     console.log('min', min);
+//     items.push(item);
+//   };
 
-  // 弹出栈顶元素
-  this.pop = () => {
-    return items.pop();
-  };
+//   // 弹出栈顶元素
+//   this.pop = () => {
+//     return items.pop();
+//   };
 
-  // 返回栈顶元素
-  this.top = () => {
-    return items[items.length -1];
-  };
+//   // 返回栈顶元素
+//   this.top = () => {
+//     return items[items.length -1];
+//   };
 
-  // 判断是否为空
-  this.isEmpty = () => {
-    return items.length === 0;
-  }
+//   // 判断是否为空
+//   this.isEmpty = () => {
+//     return items.length === 0;
+//   }
 
-  // 返回栈的大小
-  this.size = () => {
-    return items.length;
-  }
+//   // 返回栈的大小
+//   this.size = () => {
+//     return items.length;
+//   }
 
-  // 清空栈
-  this.clear = () => {
-    items = [];
-  }
+//   // 清空栈
+//   this.clear = () => {
+//     items = [];
+//   }
   
-  // 最小值
-  this.getMin = () => {
-    return min;
-  }
+//   // 最小值
+//   this.getMin = () => {
+//     return min;
+//   }
   
-}
+// }
 
-const stack = new Stack();
+// const stack = new Stack();
 
-stack.push(0);
-stack.push(-1);
-stack.push(2);
-stack.push(3);
-stack.push(-3);
-stack.getMin();
+// stack.push(0);
+// stack.push(-1);
+// stack.push(2);
+// stack.push(3);
+// stack.push(-3);
+// stack.getMin();
 
 // // 判断字符串内的括号是否合法
 // function is_leagl_brackets(str) {
@@ -160,3 +160,38 @@ stack.getMin();
 // 中缀表达式转后缀表达式
 // 10 + 15 * 25 / 20 + 100 * 2 - 30
 
+// 化栈为队
+function MyQueue() {
+  this.pushStack = [];
+  this.popStack = [];
+}
+
+MyQueue.prototype.push = function () {
+  this.pushStack.push(x);
+}
+
+// 弹出栈顶元素
+MyQueue.prototype.pop = function () {
+  if (!this.popStack.length) {
+    while (this.pushStack.length) {
+      this.popStack.push(this.pushStack.pop());
+    }
+  }
+  return this.popStack.pop();
+}
+
+// 显示栈顶元素
+MyQueue.prototype.peek = function () {
+  if (!this.popStack.length) {
+    while (this.pushStack.length) {
+      this.popStack.push(this.pushStack.pop());
+    }
+  }
+  let num = this.popStack.pop();
+  this.popStack.push(num);
+  return num;
+}
+
+MyQueue.prototype.empty = function () {
+  return !this.pushStack.length && !this.popStack.length;
+}

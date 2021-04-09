@@ -531,23 +531,135 @@
 //   return ret;
 // }
 // 进阶
-var longestSubarray = function(nums, limit) {
-  var left = 0;
-	var min = [], max = [];
-	var res = 0;
-	for (var i = 0; i < nums.length; i++) {
-		while (max.length && nums[max[max.length - 1]] <= nums[i]) max.pop();
-		max.push(i);
-		while (min.length && nums[min[min.length - 1]] >= nums[i]) min.pop();
-		min.push(i);
-		while (nums[max[0]] - nums[min[0]] > limit) {
-			left = Math.min(max[0], min[0]) + 1;
-			max[0] > min[0] ? min.shift() : max.shift();
-		}
-		res = Math.max(res, i - left + 1);
-	}
-	return res;
+// var longestSubarray = function(nums, limit) {
+//   var left = 0;
+// 	var min = [], max = [];
+// 	var res = 0;
+// 	for (var i = 0; i < nums.length; i++) {
+// 		while (max.length && nums[max[max.length - 1]] <= nums[i]) max.pop();
+// 		max.push(i);
+// 		while (min.length && nums[min[min.length - 1]] >= nums[i]) min.pop();
+// 		min.push(i);
+// 		while (nums[max[0]] - nums[min[0]] > limit) {
+// 			left = Math.min(max[0], min[0]) + 1;
+// 			max[0] > min[0] ? min.shift() : max.shift();
+// 		}
+// 		res = Math.max(res, i - left + 1);
+// 	}
+// 	return res;
+// }
+// const nums = [8,2,4,7], limit = 4;
+// const result = longestSubarray(nums, limit);
+// console.log('result', result);
+
+
+// 54.螺旋矩阵
+// var spiralOrder = function (matrix) {
+// 	if (!matrix.length || !matrix[0].length) {
+// 		return [];
+// 	}
+// 	const rows = matrix.length, columns = matrix[0].length;
+// 	const visited = new Array(rows).fill(0).map(() => new Array(columns).fill(false));
+// 	const total = rows * columns;
+// 	const order = new Array(total).fill(0);
+// 	let directionIndex = 0, row = 0, column = 0;
+// 	const directions = [[0, 1], [1, 0], [0, -1], [-1, 0]];
+// 	for (let i = 0; i < total; i++) { 
+// 		order[i] = matrix[row][column];
+// 		visited[row][column] = true;
+// 		const nextRow = row + directions[directionIndex][0], nextColumn = column + directions[directionIndex][1];
+// 		if (!(0 <= nextRow && nextRow < rows && 0 <= nextColumn && nextColumn < columns && !(visited[nextRow][nextColumn]))) {
+// 				directionIndex = (directionIndex + 1) % 4;
+// 		}
+// 		row += directions[directionIndex][0];
+// 		column += directions[directionIndex][1];
+// 	}
+// 	return order;
+// }
+
+// const matrix = [[1,2,3,4,5],[6,7,8,9,10],[11,12,13,14,15], [16,17,18,19,20],[21,22,23,24,25]];
+// console.log('matrix', matrix);
+// const result = spiralOrder(matrix);
+// console.log('result', result);
+
+// 第k个数
+// var getKthMagicNumber = (k) => {
+// 	let p3 = 0, p5 = 0, p7 = 0;
+// 	const dp = new Array(k);
+// 	dp[0] = 1;
+// 	for (let i = 1; i < k; i++) {
+// 		dp[i] = Math.min(dp[p3] * 3, dp[p5] * 5, dp[p7] * 7);
+// 		if (dp[i] === dp[p3] * 3) p3++;
+// 		if (dp[i] === dp[p5] * 5) p5++;
+// 		if (dp[i] === dp[p7] * 7) p7++;
+// 	}
+// 	return dp[k - 1];
+// }
+
+// let k = 5;
+// const result = getKthMagicNumber(k);
+// console.log(`第${k}个数 === `, result);
+
+// 猜大小
+// function search(arr, target) {
+// 	let l = 0, r = arr.length - 1;
+// 	while (l < r) {
+// 		const mid = Math.floor((r - l) / 2) + l;
+// 		if (arr[mid] === target) return mid;
+// 		if (arr[mid] > target) {
+// 			r = mid - 1;
+// 		} else {
+// 			l = mid + 1;
+// 		}
+// 	}
+// 	return l;
+// }
+// const res = search([1,2,3,4,5,6,7,8,9,10], 10);
+// console.log('res', res);
+
+// const obj = { a: 1, b: 2 };
+// console.log('c' in obj);
+
+// const obj = {};
+// for (let i = 0; i < nums.length; i++) {
+// 		if (nums[i] in obj) {
+// 				return [obj[nums[i]], i]
+// 		} else {
+// 				obj[target - nums[i]] = i;
+// 		}
+// }
+
+function ListNode(val, next) {
+	this.val = (val===undefined ? 0 : val)
+	this.next = (next===undefined ? null : next)
 }
-const nums = [8,2,4,7], limit = 4;
-const result = longestSubarray(nums, limit);
-console.log('result', result);
+
+const node1 = new ListNode(2);
+node1.next = new ListNode(4);
+node1.next.next = new ListNode(3);
+const node2 = new ListNode(5);
+node2.next = new ListNode(6);
+node2.next.next = new ListNode(4);
+
+var addTwoNumbers = (l1, l2) => {
+	let head, tail, add = 0;
+	while (l1 || l2) {
+		const n1 = l1 ? l1.val : 0;
+		const n2 = l2 ? l2.val : 0;
+		const sum = n1 + n2 + add;
+		if (!head) {
+			head = tail = new ListNode(sum % 10);
+		} else {
+			tail.next = new ListNode(sum % 10);
+			tail = tail.next;
+		}
+		add = Math.floor(sum / 10);
+		l1 && (l1 = l1.next);
+		l2 && (l2 = l2.next);
+	}
+	if (add > 0) tail.next = new ListNode(add);
+	return head;
+}
+
+const res = addTwoNumbers(node1, node2)
+console.log('res', res);
