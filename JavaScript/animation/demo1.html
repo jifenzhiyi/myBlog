@@ -63,6 +63,10 @@
       span.addEventListener("animationend", function() {
         this.classList.remove("changeColor");
       });
+      // 页面初始化闪动
+      setTimeout(() => {
+        span.classList.add('changeColor');
+      }, index * 100);
     }, 0);
   </script>
 </body>

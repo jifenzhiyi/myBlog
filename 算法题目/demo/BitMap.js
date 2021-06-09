@@ -155,17 +155,24 @@ function BoolmFilter(max_count, error_rate) {
   }
 
   this.isExist = function(key) {
+    console.log('isExist key', key);
     for (let i = 0; i < hash_ount; i++) {
       const hash_value = murmurhash3_32_gc(key, i);
       if (!get_bit(Math.abs(Math.floor(hash_value % bit_size)))) return false;
     }
     return true;
   }
+
+  this.size = function() {
+    console.log('hash_ount',hash_ount);
+    return bit_size;
+  }
 }
 
 const bloomFilter = new BoolmFilter(1000000, 0.01);
-bloomFilter.add('http://www.baidu.com');
-bloomFilter.add('https://github.com/garycourt/murmurhash-js/blob/master/murmurhash3_gc.js');
-console.log(bloomFilter.isExist('http://www.baidu.com'));
-console.log(bloomFilter.isExist('http://jsrun.net/t/VcKKp'));
-console.log(bloomFilter.isExist('https://github.com/garycourt/murmurhash-js/blob/master/murmurhash3_gc.js'));
+// bloomFilter.add('http://www.baidu.com');
+// bloomFilter.add('https://github.com/garycourt/murmurhash-js/blob/master/murmurhash3_gc.js');
+// console.log(bloomFilter.isExist('http://www.baidu.com'));
+// console.log(bloomFilter.isExist('http://jsrun.net/t/VcKKp'));
+// console.log(bloomFilter.isExist('https://github.com/garycourt/murmurhash-js/blob/master/murmurhash3_gc.js'));
+console.log('size', bloomFilter.size());

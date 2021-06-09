@@ -157,10 +157,19 @@ for(let i = 0, j = 0;j < s.length; j++){
 return max;
 */
 
-const stack = [], queue = [];
-for (let i = 1; i <= 10000; i++) {
-    i % 2 === 0 ? queue.push(i) : stack.push(i);
-}
-let ans = 0;
-while (stack.length && queue.length) ans += stack.pop() * queue.shift();
-console.log('ans', ans, 'res', Math.floor(ans / 17)); // 4903431470
+// const stack = [], queue = [];
+// for (let i = 1; i <= 10000; i++) {
+//     i % 2 === 0 ? queue.push(i) : stack.push(i);
+// }
+// let ans = 0;
+// while (stack.length && queue.length) ans += stack.pop() * queue.shift();
+// console.log('ans', ans, 'res', Math.floor(ans / 17)); // 4903431470
+
+// for (let i = 0; i < 10; ++i) {
+//     const item = ++i; // item === i;
+//     console.log('i', i, item);
+// }
+// for (let j = 0; j < 10; j++) {
+//     const item = j++; // item < i;
+//     console.log('j', j, item);
+// }
